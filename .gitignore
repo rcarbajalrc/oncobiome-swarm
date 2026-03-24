@@ -1,0 +1,85 @@
+# OncoBiome Swarm — .gitignore
+# ═══════════════════════════════════════════════════
+
+# ── SECRETOS — NUNCA subir ──────────────────────────
+.env
+*.env
+!.env.example
+
+# ── DATOS DE SIMULACIÓN ──────────────────────────────
+oncobiome.log
+oncobiome.log.*
+*.log
+
+state/*
+!state/.gitkeep
+
+logs/*
+!logs/.gitkeep
+
+runs/*
+!runs/.gitkeep
+
+results/*
+!results/.gitkeep
+
+# ── PYTHON ───────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── VIRTUAL ENVIRONMENTS ─────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+.conda/
+
+# ── TESTING ──────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ── SECURITY TOOLS ───────────────────────────────────
+.secrets.baseline
+
+# ── IDEs ─────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── JUPYTER ──────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── DOCUMENTOS GENERADOS ─────────────────────────────
+*.docx
+*.pdf
+
+# ── ARCHIVOS TEMPORALES DE DEBUG ─────────────────────
+# Cubre raíz Y subdirectorios
+**/_*.py
+
+# Excepción: scripts de mantenimiento legítimos
+!scripts/_audit_pregithub.py
+!scripts/_pregithub_cleanup.py
+
+# Placeholder heredado
+simulation/_batch_fix.py
+
+# Claude Desktop settings — rutas locales de máquina
+.claude/
+
+# Claude Desktop — configuración local de máquina
+.claude/

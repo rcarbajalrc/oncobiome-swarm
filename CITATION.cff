@@ -1,0 +1,65 @@
+cff-version: 1.2.0
+message: "If you use OncoBiome Swarm in your research, please cite it as below."
+type: software
+title: "OncoBiome Swarm: A Large Language Model-Based Multi-Agent Framework for Emergent Simulation of the KRAS G12D Pancreatic Tumor Microenvironment"
+version: "0.4.0"
+date-released: "2026-03-24"
+url: "https://github.com/YOUR_USERNAME/oncobiome-swarm"
+repository-code: "https://github.com/YOUR_USERNAME/oncobiome-swarm"
+license: "LicenseRef-OncoBiome-Dual"
+abstract: >
+  OncoBiome Swarm is a novel LLM-driven agent-based modeling (ABM) framework
+  in which every biological agent in the tumor microenvironment (TME) reasons
+  independently via a large language model with persistent memory. Applied to
+  KRAS G12D pancreatic ductal adenocarcinoma (PDAC), the framework reproduces
+  nine emergent immunosuppressive mechanisms — including cold TME formation,
+  immunoediting equilibrium, NK exhaustion preceding CD8+ collapse, and
+  tolerogenic DC phenotype — that deterministic rule-based systems cannot model.
+  Sprint 4 introduces Natural Killer (NK) and Dendritic Cell (DC) agents,
+  quantitative RMSE validation, sensitivity analysis, and n=3 reproducibility
+  for the innate-adaptive bridge experiment.
+keywords:
+  - tumor microenvironment
+  - agent-based modeling
+  - large language models
+  - KRAS G12D
+  - pancreatic cancer
+  - NK cells
+  - dendritic cells
+  - immunosuppression
+  - emergent behavior
+  - multi-agent systems
+  - computational oncology
+authors:
+  - family-names: "Carbajal"
+    given-names: "Roberto"
+    email: "robertocarbajal.rc@gmail.com"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Carbajal"
+      given-names: "Roberto"
+  title: "OncoBiome Swarm: A Large Language Model-Based Multi-Agent Framework for Emergent Simulation of the KRAS G12D Pancreatic Tumor Microenvironment"
+  journal: "bioRxiv"
+  year: 2026
+  doi: "pending"
+  url: "https://biorxiv.org"
+references:
+  - type: article
+    authors:
+      - family-names: "Selvanesan"
+        given-names: "B.C."
+    title: "Listeria delivers tetanus toxoid protein to pancreatic tumors and induces cancer cell death in mice"
+    journal: "Science Translational Medicine"
+    year: 2020
+    doi: "10.1126/scitranslmed.aax4537"
+  - type: article
+    authors:
+      - family-names: "Bear"
+        given-names: "A.S."
+      - family-names: "Vonderheide"
+        given-names: "R.H."
+    title: "Challenges and opportunities for pancreatic cancer immunotherapy"
+    journal: "Cancer Cell"
+    year: 2020
+    doi: "10.1016/j.ccell.2020.08.004"

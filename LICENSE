@@ -1,0 +1,72 @@
+Dual License — OncoBiome Swarm
+
+Copyright (c) 2026 Roberto Carbajal
+
+═══════════════════════════════════════════════════════════════
+PART A — ACADEMIC & NON-COMMERCIAL LICENSE (MIT-based)
+═══════════════════════════════════════════════════════════════
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), for
+non-commercial academic, research, and educational purposes, including the
+rights to use, copy, modify, merge, publish, and distribute the Software,
+subject to the following conditions:
+
+1. The above copyright notice and this permission notice shall be included
+   in all copies or substantial portions of the Software.
+
+2. Any publication, preprint, or academic work that uses or builds upon this
+   Software must cite:
+
+   Carbajal R. OncoBiome Swarm: A Large Language Model-Based Multi-Agent
+   Framework for Emergent Simulation of the KRAS G12D Pancreatic Tumor
+   Microenvironment. bioRxiv [Preprint]. 2026.
+
+3. Modifications must be clearly marked as such and must not be misrepresented
+   as the original Software.
+
+NON-COMMERCIAL RESTRICTION: This Part A license applies only to non-commercial
+use. Use of this Software for commercial purposes — including but not limited to
+drug discovery pipelines, clinical decision support, pharmaceutical research,
+SaaS products, or any activity generating revenue — requires a separate
+commercial license under Part B.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+═══════════════════════════════════════════════════════════════
+PART B — COMMERCIAL LICENSE
+═══════════════════════════════════════════════════════════════
+
+Commercial use of OncoBiome Swarm — including use in drug discovery,
+pharmaceutical research, clinical applications, SaaS products, or any
+revenue-generating activity — requires a separate commercial license agreement.
+
+To obtain a commercial license or discuss partnership opportunities:
+  Email: robertocarbajal.rc@gmail.com
+  Subject: OncoBiome Swarm — Commercial License Inquiry
+
+Commercial licenses include:
+  - Full source code rights for commercial deployment
+  - Priority technical support
+  - Co-development and customization options
+  - Access to future Sprint releases (PhysiCell 3D, zAvatar)
+
+═══════════════════════════════════════════════════════════════
+THIRD-PARTY COMPONENTS
+═══════════════════════════════════════════════════════════════
+
+This software uses the following open-source components:
+  - anthropic (MIT) — Claude API client
+  - pydantic / pydantic-settings (MIT) — configuration management
+  - plotly / dash (MIT) — visualization dashboard
+  - numpy (BSD) — numerical operations
+  - pytest (MIT) — test framework
+  - python-dotenv (BSD) — environment variable management
+
+Full dependency list: requirements.txt
