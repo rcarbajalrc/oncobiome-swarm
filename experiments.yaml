@@ -136,21 +136,18 @@ experiments:
 
   # ── Sprint 4: controles y experimentos NK/DC ──────────────────────────────
 
-  # CONTROL CRÍTICO: desacopla el efecto de 8 CD8+ del efecto NK/DC.
-  # Sin este control no podemos afirmar que el bridge mejora por NK/DC
-  # y no simplemente por tener más CD8+ que el baseline (5 CD8+).
   high_cd8_control_rule:
     max_agents: 150
     total_cycles: 52
     n_tumor_cells: 12
-    n_immune_cells: 8         # mismos 8 CD8+ que el bridge, sin NK/DC
+    n_immune_cells: 8
     n_macrophages: 3
     n_phytochemicals: 2
-    n_nk_cells: 0             # SIN NK
-    n_dendritic_cells: 0      # SIN DC
+    n_nk_cells: 0
+    n_dendritic_cells: 0
     opus_analysis_interval: 999
     llm_provider: rule_engine
-    description: "Control 8 CD8+ sin NK/DC — aísla efecto puro NK, rule engine ($0)"
+    description: "Control 8 CD8+ sin NK/DC — aísla efecto puro CD8+, rule engine ($0)"
 
   nk_baseline_rule:
     max_agents: 150
@@ -204,10 +201,8 @@ experiments:
     llm_provider: rule_engine
     description: "NK + DC bridge — eje innata-adaptativa, rule engine ($0)"
 
-  # FIX COSTE: max_agents=80 evita crecimiento x3.8 de tokens con proliferación.
-  # Con cap=80: ~$0.18-0.22/run. Con cap=150: ~$0.65+ (run de hoy).
   innate_adaptive_bridge_llm:
-    max_agents: 80            # FIX: era 150, causaba tokens x3.8 en ciclos tardíos
+    max_agents: 80
     total_cycles: 52
     n_tumor_cells: 12
     n_immune_cells: 8
@@ -220,7 +215,7 @@ experiments:
     description: "NK + DC bridge LLM — cap=80, ~$0.20/run"
 
   full_innate_adaptive_combo:
-    max_agents: 80            # FIX: era 180, mismo problema de coste
+    max_agents: 80
     total_cycles: 52
     n_tumor_cells: 12
     n_immune_cells: 8
@@ -231,3 +226,65 @@ experiments:
     opus_analysis_interval: 25
     llm_provider: anthropic
     description: "Full innate+adaptive — NK+DC+CD8+macro+phyto, cap=80 (~$0.25)"
+
+  # ── Sprint 5: Ablation Studies — responde a crítica del revisor ───────────
+  #
+  # Hipótesis central del revisor: "¿El LLM está modelando biología
+  # o simplemente generando comportamiento coherente gracias a la memoria?"
+  #
+  # Diseño: condición IDÉNTICA al experimento estrella (innate_adaptive_bridge)
+  # pero con NullMemoryStore (MEMORY_MODE=null) — agentes sin historia episódica.
+  #
+  # Interpretación:
+  #   - Fenómenos persisten sin memoria → robustos, no dependientes de historia
+  #   - Fenómenos desaparecen sin memoria → memoria era el mecanismo real
+  #     (igualmente interesante: identifica qué fenómenos son memory-driven)
+  #
+  # Coste: mismo que bridge_llm (~$0.20-0.70/run según cap)
+
+  ablation_no_memory_llm:
+    max_agents: 80
+    total_cycles: 52
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 25
+    llm_provider: anthropic
+    memory_mode: "null"       # ABLATION: NullMemoryStore, agentes sin historia
+    description: "ABLATION — sin memoria episódica, condición bridge (~$0.70/run)"
+
+  # CONTROL ABLATION: misma condición sin memoria, usando rule engine ($0).
+  # Valida que el rule engine se comporta igual con/sin memoria (debe ser idéntico,
+  # ya que el rule engine no usa memoria — sirve como sanity check del diseño).
+  ablation_no_memory_rule:
+    max_agents: 150
+    total_cycles: 52
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 999
+    llm_provider: rule_engine
+    memory_mode: "null"
+    description: "ABLATION control — rule engine sin memoria (sanity check, $0)"
+
+  # ABLATION BASELINE: sin NK/DC y sin memoria — aísla el efecto de la memoria
+  # en la condición más simple (5 CD8+, configuración Sprint 3).
+  ablation_no_memory_baseline_llm:
+    max_agents: 80
+    total_cycles: 52
+    n_tumor_cells: 12
+    n_immune_cells: 5
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 0
+    n_dendritic_cells: 0
+    opus_analysis_interval: 25
+    llm_provider: anthropic
+    memory_mode: "null"
+    description: "ABLATION baseline — sin memoria, sin NK/DC (~$0.35/run)"

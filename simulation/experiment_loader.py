@@ -1,17 +1,4 @@
-"""Experiment loader — carga configuración de experimentos desde YAML.
-
-Permite lanzar runs con parámetros predefinidos sin editar settings.py.
-
-USO desde terminal:
-    python3 main.py --experiment cap150_batch
-    python3 main.py --experiment quick_validate
-    python3 main.py --experiment full_rule_engine
-
-USO desde código:
-    from simulation.experiment_loader import load_experiment
-    overrides = load_experiment("cap150_batch")
-    # overrides es un dict con los parámetros a sobreescribir
-"""
+"""Experiment loader — carga configuración de experimentos desde YAML."""
 from __future__ import annotations
 
 import sys
@@ -22,17 +9,11 @@ _EXPERIMENTS_FILE = _PROJECT_DIR / "experiments.yaml"
 
 
 def load_experiment(name: str) -> dict:
-    """Carga los parámetros de un experimento por nombre.
-
-    Returns:
-        dict con los parámetros del experimento (sin 'description').
-    Raises:
-        SystemExit si el experimento no existe.
-    """
+    """Carga los parámetros de un experimento por nombre."""
     try:
         import yaml
     except ImportError:
-        print("PyYAML no instalado. Ejecuta: pip install pyyaml --break-system-packages")
+        print("PyYAML no instalado. Ejecuta: pip install pyyaml")
         sys.exit(1)
 
     if not _EXPERIMENTS_FILE.exists():
@@ -84,19 +65,13 @@ def list_experiments() -> None:
     for name, params in experiments.items():
         desc = params.get("description", "Sin descripción")
         provider = params.get("llm_provider", "anthropic")
-        cycles = params.get("total_cycles", "?")
-        cap = params.get("max_agents", "?")
-        cost = "$0" if provider == "rule_engine" else "~$0.35"
-        print(f"  {name:<20} [{cost:>5}]  {desc}")
+        memory = " [NO-MEM]" if params.get("memory_mode") == "null" else ""
+        print(f"  {name:<35} {desc}{memory}")
     print()
 
 
 def apply_experiment_to_env(params: dict) -> None:
-    """Aplica los parámetros del experimento como variables de entorno.
-
-    Esto permite que settings.py (que usa pydantic-settings) los recoja
-    automáticamente sin modificar el .env ni el código.
-    """
+    """Aplica los parámetros del experimento como variables de entorno."""
     import os
 
     mapping = {
@@ -107,10 +82,11 @@ def apply_experiment_to_env(params: dict) -> None:
         "n_immune_cells":         "N_IMMUNE_CELLS",
         "n_macrophages":          "N_MACROPHAGES",
         "n_phytochemicals":       "N_PHYTOCHEMICALS",
-        "n_nk_cells":             "N_NK_CELLS",         # Sprint 4
-        "n_dendritic_cells":      "N_DENDRITIC_CELLS",  # Sprint 4
+        "n_nk_cells":             "N_NK_CELLS",
+        "n_dendritic_cells":      "N_DENDRITIC_CELLS",
         "llm_concurrency":        "LLM_CONCURRENCY",
         "haiku_max_tokens":       "HAIKU_MAX_TOKENS",
+        "memory_mode":            "MEMORY_MODE",   # Sprint 5: ablation support
     }
 
     for param_key, env_key in mapping.items():
