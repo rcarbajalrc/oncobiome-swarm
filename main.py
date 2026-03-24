@@ -19,7 +19,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-load_dotenv(override=False)  # No sobreescribir vars ya presentes en el entorno
+load_dotenv(override=True)  # No sobreescribir vars ya presentes en el entorno
 
 _PROJECT_DIR = Path(__file__).parent
 _LOG_FILE    = _PROJECT_DIR / "oncobiome.log"
