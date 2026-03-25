@@ -83,3 +83,6 @@ simulation/_batch_fix.py
 
 # Claude Desktop — configuración local de máquina
 .claude/
+!results/bridge_n10_results.txt
+!results/abstract_n10_results.txt
+!results/bridge_n10_opus_run9.txt

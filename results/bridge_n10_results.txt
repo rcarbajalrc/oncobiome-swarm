@@ -1,0 +1,72 @@
+# OncoBiome Swarm — Resultados bridge_n10_llm COMPLETOS
+# Generado: 2026-03-25 | Sprint 5C | n=10
+
+## Configuración
+- Experimento: bridge_n10_llm (terminología biomédica)
+- Agentes: 8 CD8+ · 4 NK · 3 DC · 3 Macrófagos · 12 Tumor · 2 Fito
+- Ciclos: 52 · Cap: 80 · LLM: Haiku 4.5
+
+## Resultados completos n=10
+
+| Run | NK colapso | CD8+ colapso | Delta | Tumor c52 | Coste  | NK->CD8+ |
+|-----|-----------|-------------|-------|-----------|--------|---------|
+| 1   | c23       | c30         | +7    | 72        | $0.94  | ✓       |
+| 2   | c24       | c29         | +5    | 73        | $0.94  | ✓       |
+| 3   | c24       | c30         | +6    | 72        | $0.94  | ✓       |
+| 4   | c28       | c33         | +5    | 72        | $0.94  | ✓       |
+| 5   | c20       | c31         | +11   | 72        | $0.67  | ✓       |
+| 6   | c26       | c32         | +6    | 72        | $0.69  | ✓       |
+| 7   | c31       | c33         | +2    | 72        | $0.74  | ✓       |
+| 8   | c25       | c33         | +8    | 74        | $0.68  | ✓       |
+| 9   | c24       | c33         | +9    | 75        | $0.72  | ✓       |
+| 10  | c24       | c31         | +7    | 72        | $0.75  | ✓       |
+
+## Estadísticas finales n=10
+- NK colapso: media=24.9 · SD=3.1 · rango c20-c31
+- CD8+ colapso: media=31.5 · SD=1.4 · rango c29-c33
+- Delta NK->CD8+: media=6.6 · SD=2.4 · rango +2 a +11
+- Tumor c52: media=72.6 · SD=1.1 · rango 72-75
+- Patron NK->CD8+: 10/10 (100%) — P=0.001 binomial exacto bajo H0=0.5
+- Coste total n=10: $8.01 · media/run: $0.80
+
+## Análisis Opus documentados
+
+### Run 8 — Opus c25 (PID 34928)
+Fenómeno: cold tumor phenotype emergente. VEGF:IFN-γ ~10:1.
+Immune-excluded phenotype característico de KRAS-mutant sin programación explícita.
+
+### Run 8 — Opus c50 (PID 34928)
+Fenómeno CANDIDATO #10: Paradox fitoquímico M1.
+Fitoquímicos suprimen inadvertidamente polarización M1 atenuando gradiente IL-6.
+Crea nicho permisivo para escape clonal KRAS-G12D.
+
+### Run 9 — Opus c25 (PID 35713)
+Fenómeno CANDIDATO #11: DC-mediated cytotoxic burst emergente.
+20 muertes sincrónicas con solo 2 efectores vivos — coordinación DC amplifica
+respuesta más allá de capacidad esperada del sistema inmune agotado.
+Narrow therapeutic window: ventana M1 antes de VEGF-remodeling irreversible.
+
+### Run 9 — Opus c50 (PID 35713)
+Fenómeno CANDIDATO #12: Failed immune trafficking pattern.
+Segregación espacial emergente: inmunes en (3,33), tumor en (65,40).
+Barrera física impide reclutamiento de efectores al core tumoral.
+Más targeteable: gradiente quimiotáctico / disfunción endotelial VEGF-mediada.
+
+### Run 10 — Opus c25 (PID 36490)
+Fenómeno: Selective pressure post-cytoreduction.
+Die-off paradójicamente selecciona clones KRAS_G12D metabólicamente más aptos.
+Supervivientes c50 tendrán mayor resistencia terapéutica que población fundadora.
+
+### Run 10 — Opus c50 (PID 36490)
+Fenómeno CANDIDATO #13: DC tolerization by IL-6-rich niche.
+DC presentes pero tolerizadas por nicho rico en IL-6.
+Implicación terapéutica: no expandir inmunes existentes, sino
+delivery exógeno IFN-γ o STING agonism para reactivar DC.
+VEGF:IFN-γ ~25:1 — característico de adenocarcinomas KRAS refractarios a
+checkpoint inhibition.
+
+## Nota estadística
+n=10 por condición permite Wilcoxon signed-rank formal.
+NK precede CD8+ en 10/10 runs: P=0.001 exacto binomial.
+Delta medio NK->CD8+: 6.6±2.4 ciclos (14.3±5.2 días biológicos).
+Wilcoxon pendiente vs ablation_abstract_n10 para comparación formal.

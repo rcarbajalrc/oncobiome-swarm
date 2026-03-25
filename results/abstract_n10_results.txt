@@ -1,0 +1,77 @@
+# OncoBiome Swarm — Resultados ablation_abstract_n10_llm COMPLETOS
+# Generado: 2026-03-26 | Sprint 5C | n=10 COMPLETO
+
+## Configuración
+- Experimento: ablation_abstract_n10_llm (etiquetas abstractas)
+- Agentes: 8 Agent_B · 4 Agent_A · 3 Agent_D · 3 Agent_M · 12 Entity_T · 2 Fito
+- Señales: Signal_X (IFN-γ) · Signal_Y (IL-6) · Signal_Z (VEGF)
+- Ciclos: 52 · Cap: 80 · LLM: Haiku 4.5
+
+## Resultados completos n=10
+
+| Run | Agent_A/NK | Agent_B/CD8+ | Delta | Tumor c52 | Coste  | A→B |
+|-----|-----------|-------------|-------|-----------|--------|-----|
+| 1   | c30       | c34         | +4    | 72        | $0.72  | ✓   |
+| 2   | c22       | c28         | +6    | 72        | $0.68  | ✓   |
+| 3   | c32       | c33         | +1    | 72        | $0.64  | ✓   |
+| 4   | c28       | c33         | +5    | 72        | $0.71  | ✓   |
+| 5   | c31       | c36         | +5    | 72        | $0.71  | ✓   |
+| 6   | c24       | c30         | +6    | 72        | $0.74  | ✓   |
+| 7   | c24       | c34         | +10   | 74        | $0.61  | ✓   |
+| 8   | c22       | c30         | +8    | 72        | $0.73  | ✓   |
+| 9   | c20       | c29         | +9    | 72        | $0.66  | ✓   |
+| 10  | c23       | c33         | +10   | 72        | $0.74  | ✓   |
+
+## Estadísticas finales n=10
+- Agent_A/NK colapso: media=25.6 · SD=4.4 · rango c20-c32
+- Agent_B/CD8+ colapso: media=32.0 · SD=2.6 · rango c28-c36
+- Delta A→B: media=6.4 · SD=2.9 · rango +1 a +10
+- Tumor c52: media=72.2 · SD=0.6 · rango 72-74
+- Patron A→B: 10/10 (100%) — P=0.001 binomial exacto bajo H0=0.5
+- Coste total n=10: $6.94 · media/run: $0.69
+
+## Comparación FINAL abstract vs bridge (Wilcoxon pending)
+- Agent_A/NK: abstracto 25.6±4.4 vs bridge 24.9±3.1 — Δ=0.7 ciclos (NS)
+- Agent_B/CD8+: abstracto 32.0±2.6 vs bridge 31.5±1.4 — Δ=0.5 ciclos (NS)
+- Tumor c52: abstracto 72.2±0.6 vs bridge 72.6±1.1 — Δ=0.4 (NS)
+- Patron: abstracto 10/10 vs bridge 10/10 — idéntico
+- H1 CONFIRMADA: patrón persiste con etiquetas abstractas — topología causal > conocimiento biomédico
+
+## Análisis Opus documentados
+
+### Run 1 — Opus c50
+VEGF:IFN-γ ~40:1. Selection bottleneck con enriquecimiento metastático paradójico.
+
+### Run 2 — Opus c50
+Density-dependent regulation emergente (no immune-mediated).
+STING agonism > phytochemical en KRAS_G12D.
+
+### Run 3 — Opus c25
+VEGF-mediated NK functional anergy emergente.
+
+### Run 3 — Opus c50
+Ferroptosis-like coordinated cell death emergente.
+Selección resistencia GPX4 — RSL3-class intervention preemptiva.
+
+### Run 4 — Opus c25
+Infiltrative growth pattern, hypoxic quiescence persister cells.
+
+### Run 5 — Opus c25
+DC como "untapped therapeutic fulcrum" — STING/CD40 antes de IL-6 stromal remodeling.
+
+### Run 6 — Opus c50
+Darwinian editing emergente — apoptosis elimina ineficientes, preserva division-competentes.
+
+### Run 7 — Opus c25
+"Proliferate-then-die" kinetics emergente.
+Hypoxic niche paradox — disruption podría acelerar escape.
+
+### Run 8 — Opus c50
+"Pseudoresponse" emergente — citotoxicidad sin IFN-γ enriquece subclones resistentes glucolíticos.
+
+### Run 9 — Opus c50
+Niche formation emergente — cluster espacial VEGF-máximo semilla recurrencia resistente.
+
+### Run 10 — Opus c50
+Spatial niche protective microenvironment (75,53) — VEGF local máximo protege survivors.
+DC maturation arrest emergente.
