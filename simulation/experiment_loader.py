@@ -64,9 +64,13 @@ def list_experiments() -> None:
     print(f"\nExperimentos disponibles ({len(experiments)}):\n")
     for name, params in experiments.items():
         desc = params.get("description", "Sin descripción")
-        provider = params.get("llm_provider", "anthropic")
-        memory = " [NO-MEM]" if params.get("memory_mode") == "null" else ""
-        print(f"  {name:<35} {desc}{memory}")
+        tags = []
+        if params.get("memory_mode") == "null":
+            tags.append("NO-MEM")
+        if params.get("prompt_mode") == "abstract":
+            tags.append("ABSTRACT")
+        tag_str = f" [{', '.join(tags)}]" if tags else ""
+        print(f"  {name:<40} {desc}{tag_str}")
     print()
 
 
@@ -86,7 +90,8 @@ def apply_experiment_to_env(params: dict) -> None:
         "n_dendritic_cells":      "N_DENDRITIC_CELLS",
         "llm_concurrency":        "LLM_CONCURRENCY",
         "haiku_max_tokens":       "HAIKU_MAX_TOKENS",
-        "memory_mode":            "MEMORY_MODE",   # Sprint 5: ablation support
+        "memory_mode":            "MEMORY_MODE",    # Sprint 5A: ablation memoria
+        "prompt_mode":            "PROMPT_MODE",    # Sprint 5B: ablation semántica
     }
 
     for param_key, env_key in mapping.items():

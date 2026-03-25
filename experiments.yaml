@@ -2,11 +2,6 @@
 # Cada experimento define un conjunto de parámetros que sobreescriben settings.py
 # Uso: python3 main.py --experiment <nombre>
 #      python3 main.py --list-experiments
-#
-# NOTA DE COSTE (Sprint 4):
-#   Con NK/DC + proliferación tumoral, tokens/ciclo crecen ×3.8 si cap=150.
-#   Todos los experimentos LLM con NK/DC usan max_agents=80 para controlar coste.
-#   Coste estimado con cap=80: ~$0.18-0.22/run vs ~$0.65+ con cap=150.
 
 experiments:
 
@@ -18,15 +13,6 @@ experiments:
     opus_analysis_interval: 25
     llm_provider: anthropic
     description: "Baseline KRAS G12D — cap 80, 77 ciclos (~$0.35)"
-
-  cap150_batch:
-    max_agents: 150
-    total_cycles: 52
-    opus_analysis_interval: 25
-    llm_provider: anthropic
-    description: "Cap 150 con smart batching — 52 ciclos (~$0.35)"
-
-  # ── Validación sin LLM ($0) ───────────────────────────────────────────────
 
   quick_validate:
     max_agents: 150
@@ -42,24 +28,6 @@ experiments:
     llm_provider: rule_engine
     description: "Run completa rule engine — $0, ~30 segundos"
 
-  stress_cap200:
-    max_agents: 200
-    total_cycles: 30
-    opus_analysis_interval: 999
-    llm_provider: rule_engine
-    description: "Stress test cap 200 — $0"
-
-  # ── Estudios de composición (Sprint 1-3) ─────────────────────────────────
-
-  high_immune:
-    max_agents: 150
-    total_cycles: 52
-    n_immune_cells: 15
-    n_tumor_cells: 8
-    opus_analysis_interval: 25
-    llm_provider: anthropic
-    description: "Inmunidad reforzada — 15 CD8+ vs 8 tumor (~$0.35)"
-
   no_immune:
     max_agents: 150
     total_cycles: 30
@@ -71,26 +39,6 @@ experiments:
     description: "Control sin inmunidad — crecimiento tumoral puro ($0)"
 
   # ── Intervenciones terapéuticas (Sprint 1-3) ─────────────────────────────
-
-  phyto_intervention:
-    max_agents: 150
-    total_cycles: 52
-    n_phytochemicals: 8
-    n_immune_cells: 5
-    n_tumor_cells: 12
-    opus_analysis_interval: 25
-    llm_provider: anthropic
-    description: "Intervención fitoquímica — 8 fitoquímicos vs baseline 2 (~$0.35)"
-
-  phyto_intervention_rule:
-    max_agents: 150
-    total_cycles: 52
-    n_phytochemicals: 8
-    n_immune_cells: 5
-    n_tumor_cells: 12
-    opus_analysis_interval: 999
-    llm_provider: rule_engine
-    description: "Intervención fitoquímica — rule engine ($0)"
 
   immune_boost:
     max_agents: 150
@@ -147,7 +95,7 @@ experiments:
     n_dendritic_cells: 0
     opus_analysis_interval: 999
     llm_provider: rule_engine
-    description: "Control 8 CD8+ sin NK/DC — aísla efecto puro CD8+, rule engine ($0)"
+    description: "Control 8 CD8+ sin NK/DC — aísla efecto puro CD8+ ($0)"
 
   nk_baseline_rule:
     max_agents: 150
@@ -173,7 +121,7 @@ experiments:
     n_dendritic_cells: 0
     opus_analysis_interval: 999
     llm_provider: rule_engine
-    description: "NK boost — 8 NK (terapia adoptiva simulada), rule engine ($0)"
+    description: "NK boost — 8 NK terapia adoptiva, rule engine ($0)"
 
   dc_baseline_rule:
     max_agents: 150
@@ -212,35 +160,10 @@ experiments:
     n_dendritic_cells: 3
     opus_analysis_interval: 25
     llm_provider: anthropic
-    description: "NK + DC bridge LLM — cap=80, ~$0.20/run"
+    description: "NK + DC bridge LLM — cap=80, ~$0.70/run"
 
-  full_innate_adaptive_combo:
-    max_agents: 80
-    total_cycles: 52
-    n_tumor_cells: 12
-    n_immune_cells: 8
-    n_macrophages: 4
-    n_phytochemicals: 4
-    n_nk_cells: 4
-    n_dendritic_cells: 3
-    opus_analysis_interval: 25
-    llm_provider: anthropic
-    description: "Full innate+adaptive — NK+DC+CD8+macro+phyto, cap=80 (~$0.25)"
-
-  # ── Sprint 5: Ablation Studies — responde a crítica del revisor ───────────
-  #
-  # Hipótesis central del revisor: "¿El LLM está modelando biología
-  # o simplemente generando comportamiento coherente gracias a la memoria?"
-  #
-  # Diseño: condición IDÉNTICA al experimento estrella (innate_adaptive_bridge)
-  # pero con NullMemoryStore (MEMORY_MODE=null) — agentes sin historia episódica.
-  #
-  # Interpretación:
-  #   - Fenómenos persisten sin memoria → robustos, no dependientes de historia
-  #   - Fenómenos desaparecen sin memoria → memoria era el mecanismo real
-  #     (igualmente interesante: identifica qué fenómenos son memory-driven)
-  #
-  # Coste: mismo que bridge_llm (~$0.20-0.70/run según cap)
+  # ── Sprint 5A: Ablation memoria (COMPLETO n=3) ────────────────────────────
+  # Resultado: NK→CD8+ robusto sin memoria (6/6 runs, CV=1.8%)
 
   ablation_no_memory_llm:
     max_agents: 80
@@ -253,12 +176,9 @@ experiments:
     n_dendritic_cells: 3
     opus_analysis_interval: 25
     llm_provider: anthropic
-    memory_mode: "null"       # ABLATION: NullMemoryStore, agentes sin historia
-    description: "ABLATION — sin memoria episódica, condición bridge (~$0.70/run)"
+    memory_mode: "null"
+    description: "ABLATION memoria — NullMemoryStore, bridge (~$0.70/run)"
 
-  # CONTROL ABLATION: misma condición sin memoria, usando rule engine ($0).
-  # Valida que el rule engine se comporta igual con/sin memoria (debe ser idéntico,
-  # ya que el rule engine no usa memoria — sirve como sanity check del diseño).
   ablation_no_memory_rule:
     max_agents: 150
     total_cycles: 52
@@ -271,10 +191,8 @@ experiments:
     opus_analysis_interval: 999
     llm_provider: rule_engine
     memory_mode: "null"
-    description: "ABLATION control — rule engine sin memoria (sanity check, $0)"
+    description: "ABLATION memoria control — rule engine sanity check ($0)"
 
-  # ABLATION BASELINE: sin NK/DC y sin memoria — aísla el efecto de la memoria
-  # en la condición más simple (5 CD8+, configuración Sprint 3).
   ablation_no_memory_baseline_llm:
     max_agents: 80
     total_cycles: 52
@@ -287,4 +205,87 @@ experiments:
     opus_analysis_interval: 25
     llm_provider: anthropic
     memory_mode: "null"
-    description: "ABLATION baseline — sin memoria, sin NK/DC (~$0.35/run)"
+    description: "ABLATION memoria baseline — sin NK/DC (~$0.35/run)"
+
+  # ── Sprint 5B: Ablation semántica (H0 vs H1) ─────────────────────────────
+  #
+  # Hipótesis:
+  #   H1 (dinámica emergente real): el patrón NK→CD8+ emerge de topología causal
+  #   H0 (plausibilidad narrativa): el patrón emerge del conocimiento biomédico
+  #      aprendido por el LLM ("NK cells exhaust early", etc.)
+  #
+  # Diseño: misma simulación, mismos parámetros, misma topología causal.
+  # SOLO cambia el lenguaje: NK→Agent_A, CD8→Agent_B, IFN-γ→Signal_X, etc.
+  # La topología causal se preserva explícitamente en los prompts abstractos.
+  #
+  # Resultado que confirma H1:
+  #   Patrón Agent_A→Agent_B persiste con etiquetas abstractas (Δ<3 ciclos vs control)
+  # Resultado que confirma H0:
+  #   Patrón desaparece o varía >5 ciclos al quitar terminología biomédica
+  #
+  # Coste estimado: ~$0.70/run (misma configuración que bridge_llm)
+
+  ablation_abstract_semantics_llm:
+    max_agents: 80
+    total_cycles: 52
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 25
+    llm_provider: anthropic
+    prompt_mode: "abstract"   # usa llm/prompts_abstract.py
+    description: "ABLATION semántica — etiquetas abstractas (Agent_A/B, Signal_X/Y) (~$0.70/run)"
+
+  ablation_abstract_semantics_no_memory_llm:
+    max_agents: 80
+    total_cycles: 52
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 25
+    llm_provider: anthropic
+    memory_mode: "null"
+    prompt_mode: "abstract"   # doble ablation: sin memoria + sin semántica
+    description: "ABLATION doble — sin memoria + etiquetas abstractas (~$0.70/run)"
+
+  # ── Sprint 5B: n=10 para Wilcoxon formal ─────────────────────────────────
+  #
+  # Objetivo: pasar de claims direccionales (n=3) a inferencia estadística formal.
+  # n=10 permite Wilcoxon signed-rank con potencia aceptable.
+  # Pre-registro de criterio de éxito:
+  #   NK precede CD8+ en ≥8/10 runs (P<0.05 binomial exacto bajo H0=0.5)
+  #
+  # Coste estimado: 10 runs × $0.70 = ~$7 por condición
+
+  bridge_n10_llm:
+    max_agents: 80
+    total_cycles: 52
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 25
+    llm_provider: anthropic
+    description: "Bridge n=10 — Wilcoxon formal, criterio ≥8/10 (~$0.70/run)"
+
+  ablation_abstract_n10_llm:
+    max_agents: 80
+    total_cycles: 52
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 25
+    llm_provider: anthropic
+    prompt_mode: "abstract"
+    description: "Semántica abstracta n=10 — Wilcoxon vs bridge (~$0.70/run)"
