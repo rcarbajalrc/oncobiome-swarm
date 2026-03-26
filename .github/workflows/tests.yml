@@ -29,19 +29,39 @@ jobs:
     - name: Install test dependencies
       run: pip install pytest==7.4.4 pytest-asyncio==0.23.8
 
+    - name: Diagnose config shadowing
+      run: |
+        echo "=== pip show config ==="
+        pip show config || echo "config not installed via pip"
+        echo "=== which config package ==="
+        python -c "import importlib.util; s=importlib.util.find_spec('config'); print(s)"
+        echo "=== pip list | grep config ==="
+        pip list | grep -i config || echo "none"
+
+    - name: Remove conflicting config package if present
+      run: pip uninstall -y config || echo "config package not installed, OK"
+
+    - name: Verify config resolves to project
+      run: |
+        python -c "
+        import sys
+        sys.path.insert(0, '.')
+        import config
+        print('config.__file__:', config.__file__)
+        from config import get_config
+        print('get_config OK:', get_config)
+        "
+
     - name: Create .env
       run: |
         echo "ANTHROPIC_API_KEY=sk-ant-test-placeholder" > .env
         echo "SIMULATION_SEED=42" >> .env
 
-    - name: Collect tests
-      run: python -m pytest tests/ --collect-only -q || true
-
     - name: Run tests
       env:
         ANTHROPIC_API_KEY: "sk-ant-test-placeholder"
         SIMULATION_SEED: "42"
-      run: python -m pytest tests/ -v --tb=long
+      run: python -m pytest tests/ -v --tb=short
 
     - name: Validate config
       run: python -c "import yaml; d=yaml.safe_load(open('experiments.yaml')); e=d.get('experiments',d); print('Experiments:', len(e))"
