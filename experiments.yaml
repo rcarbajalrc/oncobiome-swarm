@@ -1,33 +1,25 @@
-# OncoBiome Swarm — Experimentos predefinidos
-# Cada experimento define un conjunto de parámetros que sobreescriben settings.py
-# Uso: python3 main.py --experiment <nombre>
-#      python3 main.py --list-experiments
+# OncoBiome Swarm — Experimentos
+# python3 main.py --experiment <nombre>
 
 experiments:
-
-  # ── Baseline y producción ─────────────────────────────────────────────────
-
   cap80_baseline:
     max_agents: 80
     total_cycles: 77
     opus_analysis_interval: 25
     llm_provider: anthropic
-    description: "Baseline KRAS G12D — cap 80, 77 ciclos (~$0.35)"
-
+    description: Baseline KRAS G12D — cap 80, 77 ciclos (~$0.35)
   cap150_batch:
     max_agents: 150
     total_cycles: 52
     opus_analysis_interval: 25
     llm_provider: anthropic
-    description: "Cap 150 con smart batching — 52 ciclos (~$0.35)"
-
+    description: Cap 150 con smart batching — 52 ciclos (~$0.35)
   stress_cap200:
     max_agents: 200
     total_cycles: 30
     opus_analysis_interval: 999
     llm_provider: rule_engine
-    description: "Stress test cap 200 — $0"
-
+    description: Stress test cap 200 — $0
   high_immune:
     max_agents: 150
     total_cycles: 52
@@ -35,22 +27,19 @@ experiments:
     n_tumor_cells: 8
     opus_analysis_interval: 25
     llm_provider: anthropic
-    description: "Inmunidad reforzada — 15 CD8+ vs 8 tumor (~$0.35)"
-
+    description: Inmunidad reforzada — 15 CD8+ vs 8 tumor (~$0.35)
   quick_validate:
     max_agents: 150
     total_cycles: 20
     opus_analysis_interval: 999
     llm_provider: rule_engine
-    description: "Validación rápida — rule engine, $0, <10 segundos"
-
+    description: Validación rápida — rule engine, $0, <10 segundos
   full_rule_engine:
     max_agents: 150
     total_cycles: 77
     opus_analysis_interval: 999
     llm_provider: rule_engine
-    description: "Run completa rule engine — $0, ~30 segundos"
-
+    description: Run completa rule engine — $0, ~30 segundos
   no_immune:
     max_agents: 150
     total_cycles: 30
@@ -59,10 +48,7 @@ experiments:
     n_phytochemicals: 0
     opus_analysis_interval: 999
     llm_provider: rule_engine
-    description: "Control sin inmunidad — crecimiento tumoral puro ($0)"
-
-  # ── Intervenciones terapéuticas (Sprint 1-3) ─────────────────────────────
-
+    description: Control sin inmunidad — crecimiento tumoral puro ($0)
   immune_boost:
     max_agents: 150
     total_cycles: 52
@@ -71,8 +57,7 @@ experiments:
     n_tumor_cells: 12
     opus_analysis_interval: 25
     llm_provider: anthropic
-    description: "Inmunoterapia simulada — 12 CD8+ + 6 macrófagos (~$0.35)"
-
+    description: Inmunoterapia simulada — 12 CD8+ + 6 macrófagos (~$0.35)
   immune_boost_rule:
     max_agents: 150
     total_cycles: 52
@@ -81,8 +66,7 @@ experiments:
     n_tumor_cells: 12
     opus_analysis_interval: 999
     llm_provider: rule_engine
-    description: "Inmunoterapia simulada — rule engine ($0)"
-
+    description: Inmunoterapia simulada — rule engine ($0)
   combination_therapy:
     max_agents: 150
     total_cycles: 52
@@ -92,8 +76,7 @@ experiments:
     n_tumor_cells: 12
     opus_analysis_interval: 25
     llm_provider: anthropic
-    description: "Terapia combinada — fitoquímicos + inmunidad (~$0.35)"
-
+    description: Terapia combinada — fitoquímicos + inmunidad (~$0.35)
   combination_therapy_rule:
     max_agents: 150
     total_cycles: 52
@@ -103,10 +86,7 @@ experiments:
     n_tumor_cells: 12
     opus_analysis_interval: 999
     llm_provider: rule_engine
-    description: "Terapia combinada — rule engine ($0)"
-
-  # ── Sprint 4: controles y experimentos NK/DC ──────────────────────────────
-
+    description: Terapia combinada — rule engine ($0)
   high_cd8_control_rule:
     max_agents: 150
     total_cycles: 52
@@ -118,8 +98,7 @@ experiments:
     n_dendritic_cells: 0
     opus_analysis_interval: 999
     llm_provider: rule_engine
-    description: "Control 8 CD8+ sin NK/DC — aísla efecto puro CD8+ ($0)"
-
+    description: Control 8 CD8+ sin NK/DC — aísla efecto puro CD8+ ($0)
   nk_baseline_rule:
     max_agents: 150
     total_cycles: 52
@@ -131,8 +110,7 @@ experiments:
     n_dendritic_cells: 0
     opus_analysis_interval: 999
     llm_provider: rule_engine
-    description: "NK baseline — 4 NK + CD8+ estándar, rule engine ($0)"
-
+    description: NK baseline — 4 NK + CD8+ estándar, rule engine ($0)
   nk_boost_rule:
     max_agents: 150
     total_cycles: 52
@@ -144,8 +122,7 @@ experiments:
     n_dendritic_cells: 0
     opus_analysis_interval: 999
     llm_provider: rule_engine
-    description: "NK boost — 8 NK terapia adoptiva, rule engine ($0)"
-
+    description: NK boost — 8 NK terapia adoptiva, rule engine ($0)
   dc_baseline_rule:
     max_agents: 150
     total_cycles: 52
@@ -157,8 +134,7 @@ experiments:
     n_dendritic_cells: 3
     opus_analysis_interval: 999
     llm_provider: rule_engine
-    description: "DC baseline — 3 DC + CD8+ estándar, rule engine ($0)"
-
+    description: DC baseline — 3 DC + CD8+ estándar, rule engine ($0)
   innate_adaptive_bridge_rule:
     max_agents: 150
     total_cycles: 52
@@ -170,8 +146,7 @@ experiments:
     n_dendritic_cells: 3
     opus_analysis_interval: 999
     llm_provider: rule_engine
-    description: "NK + DC bridge — eje innata-adaptativa, rule engine ($0)"
-
+    description: NK + DC bridge — eje innata-adaptativa, rule engine ($0)
   innate_adaptive_bridge_llm:
     max_agents: 80
     total_cycles: 52
@@ -183,11 +158,7 @@ experiments:
     n_dendritic_cells: 3
     opus_analysis_interval: 25
     llm_provider: anthropic
-    description: "NK + DC bridge LLM — cap=80, ~$0.70/run"
-
-  # ── Sprint 5A: Ablation memoria (COMPLETO n=3) ────────────────────────────
-  # Resultado: NK→CD8+ robusto sin memoria (6/6 runs, CV=1.8%)
-
+    description: NK + DC bridge LLM — cap=80, ~$0.70/run
   ablation_no_memory_llm:
     max_agents: 80
     total_cycles: 52
@@ -199,9 +170,8 @@ experiments:
     n_dendritic_cells: 3
     opus_analysis_interval: 25
     llm_provider: anthropic
-    memory_mode: "null"
-    description: "ABLATION memoria — NullMemoryStore, bridge (~$0.70/run)"
-
+    memory_mode: 'null'
+    description: ABLATION memoria — NullMemoryStore, bridge (~$0.70/run)
   ablation_no_memory_rule:
     max_agents: 150
     total_cycles: 52
@@ -213,9 +183,8 @@ experiments:
     n_dendritic_cells: 3
     opus_analysis_interval: 999
     llm_provider: rule_engine
-    memory_mode: "null"
-    description: "ABLATION memoria control — rule engine sanity check ($0)"
-
+    memory_mode: 'null'
+    description: ABLATION memoria control — rule engine sanity check ($0)
   ablation_no_memory_baseline_llm:
     max_agents: 80
     total_cycles: 52
@@ -227,27 +196,8 @@ experiments:
     n_dendritic_cells: 0
     opus_analysis_interval: 25
     llm_provider: anthropic
-    memory_mode: "null"
-    description: "ABLATION memoria baseline — sin NK/DC (~$0.35/run)"
-
-  # ── Sprint 5B: Ablation semántica (H0 vs H1) ─────────────────────────────
-  #
-  # Hipótesis:
-  #   H1 (dinámica emergente real): el patrón NK→CD8+ emerge de topología causal
-  #   H0 (plausibilidad narrativa): el patrón emerge del conocimiento biomédico
-  #      aprendido por el LLM ("NK cells exhaust early", etc.)
-  #
-  # Diseño: misma simulación, mismos parámetros, misma topología causal.
-  # SOLO cambia el lenguaje: NK→Agent_A, CD8→Agent_B, IFN-γ→Signal_X, etc.
-  # La topología causal se preserva explícitamente en los prompts abstractos.
-  #
-  # Resultado que confirma H1:
-  #   Patrón Agent_A→Agent_B persiste con etiquetas abstractas (Δ<3 ciclos vs control)
-  # Resultado que confirma H0:
-  #   Patrón desaparece o varía >5 ciclos al quitar terminología biomédica
-  #
-  # Coste estimado: ~$0.70/run (misma configuración que bridge_llm)
-
+    memory_mode: 'null'
+    description: ABLATION memoria baseline — sin NK/DC (~$0.35/run)
   ablation_abstract_semantics_llm:
     max_agents: 80
     total_cycles: 52
@@ -259,9 +209,9 @@ experiments:
     n_dendritic_cells: 3
     opus_analysis_interval: 25
     llm_provider: anthropic
-    prompt_mode: "abstract"   # usa llm/prompts_abstract.py
-    description: "ABLATION semántica — etiquetas abstractas (Agent_A/B, Signal_X/Y) (~$0.70/run)"
-
+    prompt_mode: abstract
+    description: ABLATION semántica — etiquetas abstractas (Agent_A/B, Signal_X/Y)
+      (~$0.70/run)
   ablation_abstract_semantics_no_memory_llm:
     max_agents: 80
     total_cycles: 52
@@ -273,19 +223,9 @@ experiments:
     n_dendritic_cells: 3
     opus_analysis_interval: 25
     llm_provider: anthropic
-    memory_mode: "null"
-    prompt_mode: "abstract"   # doble ablation: sin memoria + sin semántica
-    description: "ABLATION doble — sin memoria + etiquetas abstractas (~$0.70/run)"
-
-  # ── Sprint 5B: n=10 para Wilcoxon formal ─────────────────────────────────
-  #
-  # Objetivo: pasar de claims direccionales (n=3) a inferencia estadística formal.
-  # n=10 permite Wilcoxon signed-rank con potencia aceptable.
-  # Pre-registro de criterio de éxito:
-  #   NK precede CD8+ en ≥8/10 runs (P<0.05 binomial exacto bajo H0=0.5)
-  #
-  # Coste estimado: 10 runs × $0.70 = ~$7 por condición
-
+    memory_mode: 'null'
+    prompt_mode: abstract
+    description: ABLATION doble — sin memoria + etiquetas abstractas (~$0.70/run)
   bridge_n10_llm:
     max_agents: 80
     total_cycles: 52
@@ -297,8 +237,7 @@ experiments:
     n_dendritic_cells: 3
     opus_analysis_interval: 25
     llm_provider: anthropic
-    description: "Bridge n=10 — Wilcoxon formal, criterio ≥8/10 (~$0.70/run)"
-
+    description: Bridge n=10 — Wilcoxon formal, criterio ≥8/10 (~$0.70/run)
   ablation_abstract_n10_llm:
     max_agents: 80
     total_cycles: 52
@@ -310,28 +249,8 @@ experiments:
     n_dendritic_cells: 3
     opus_analysis_interval: 25
     llm_provider: anthropic
-    prompt_mode: "abstract"
-    description: "Semántica abstracta n=10 — Wilcoxon vs bridge (~$0.70/run)"
-
-  # ── Sprint 6: zAvatar TCGA-PAAD ──────────────────────────────────────────
-  #
-  # Objetivo: personalizar seed biológico con datos reales TCGA-PAAD (177 muestras)
-  # Tres perfiles derivados de expresión génica TME (z-scores):
-  #   - MEDIAN: paciente PDAC típico (cambios mínimos vs base calibrado)
-  #   - COLD:   TME inmunosupresor (IFNG p10, VEGFA p90, IL6 p90)
-  #   - HOT:    TME inmuno-activo  (IFNG p90, VEGFA p10, IL6 p10)
-  #
-  # Traducción génica:
-  #   CD8A↑→immune_kill↑, NCAM1↑→nk_kill↑, IFNG↑→dc_threshold↓
-  #   VEGFA↑→cytokine_decay↓, IL6↑→m2_threshold↓, CD274↑→exhaustion↓
-  #
-  # Hipótesis Sprint 6:
-  #   H6a: COLD_TUMOR muestra colapso NK+CD8+ más rápido que MEDIAN (Δ>5 ciclos)
-  #   H6b: HOT_TUMOR muestra retraso o control parcial del tumor vs MEDIAN
-  #   H6c: patrón NK→CD8+ persiste en los 3 perfiles (topología causal robusta)
-  #
-  # Coste estimado: ~$0.70/run × 3 perfiles × 3 runs = ~$6.30
-
+    prompt_mode: abstract
+    description: Semántica abstracta n=10 — Wilcoxon vs bridge (~$0.70/run)
   zavatar_median_llm:
     max_agents: 80
     total_cycles: 52
@@ -343,7 +262,6 @@ experiments:
     n_dendritic_cells: 3
     opus_analysis_interval: 25
     llm_provider: anthropic
-    # Parámetros derivados de TCGA-PAAD MEDIAN (177 muestras)
     immune_kill_rate: 0.1419
     nk_kill_rate: 0.095
     nk_il6_suppression_threshold: 0.0409
@@ -352,8 +270,8 @@ experiments:
     cytokine_decay: 0.0403
     immune_exhaustion_age: 14
     dc_maturation_cycles: 3
-    description: "Sprint 6 zAvatar MEDIAN — perfil TCGA-PAAD mediana (177 pacientes, ~$0.70/run)"
-
+    description: Sprint 6 zAvatar MEDIAN — perfil TCGA-PAAD mediana (177 pacientes,
+      ~$0.70/run)
   zavatar_cold_llm:
     max_agents: 80
     total_cycles: 52
@@ -365,7 +283,6 @@ experiments:
     n_dendritic_cells: 3
     opus_analysis_interval: 25
     llm_provider: anthropic
-    # Parámetros derivados de TCGA-PAAD COLD (IFNG p10, VEGFA p90, IL6 p90)
     immune_kill_rate: 0.0953
     nk_kill_rate: 0.0666
     nk_il6_suppression_threshold: 0.0287
@@ -374,8 +291,7 @@ experiments:
     cytokine_decay: 0.0301
     immune_exhaustion_age: 11
     dc_maturation_cycles: 3
-    description: "Sprint 6 zAvatar COLD — TME inmunosupresor TCGA-PAAD (~$0.70/run)"
-
+    description: Sprint 6 zAvatar COLD — TME inmunosupresor TCGA-PAAD (~$0.70/run)
   zavatar_hot_llm:
     max_agents: 80
     total_cycles: 52
@@ -387,7 +303,6 @@ experiments:
     n_dendritic_cells: 3
     opus_analysis_interval: 25
     llm_provider: anthropic
-    # Parámetros derivados de TCGA-PAAD HOT (IFNG p90, VEGFA p10, IL6 p10)
     immune_kill_rate: 0.1982
     nk_kill_rate: 0.1305
     nk_il6_suppression_threshold: 0.0498
@@ -396,9 +311,7 @@ experiments:
     cytokine_decay: 0.0494
     immune_exhaustion_age: 19
     dc_maturation_cycles: 2
-    description: "Sprint 6 zAvatar HOT — TME inmuno-activo TCGA-PAAD (~$0.70/run)"
-
-  # Controles rule engine para Sprint 6 ($0)
+    description: Sprint 6 zAvatar HOT — TME inmuno-activo TCGA-PAAD (~$0.70/run)
   zavatar_cold_rule:
     max_agents: 80
     total_cycles: 52
@@ -412,8 +325,7 @@ experiments:
     llm_provider: rule_engine
     immune_kill_rate: 0.0953
     nk_kill_rate: 0.0666
-    description: "Sprint 6 zAvatar COLD rule engine — sanity check ($0)"
-
+    description: Sprint 6 zAvatar COLD rule engine — sanity check ($0)
   zavatar_hot_rule:
     max_agents: 80
     total_cycles: 52
@@ -427,9 +339,7 @@ experiments:
     llm_provider: rule_engine
     immune_kill_rate: 0.1982
     nk_kill_rate: 0.1305
-    description: "Sprint 6 zAvatar HOT rule engine — sanity check ($0)"
-
-  # Sprint 6: zAvatar 35 ciclos — COLD y HOT (captura colapsos, ahorra ~33%)
+    description: Sprint 6 zAvatar HOT rule engine — sanity check ($0)
   zavatar_cold_35c_llm:
     max_agents: 80
     total_cycles: 35
@@ -449,8 +359,7 @@ experiments:
     cytokine_decay: 0.0301
     immune_exhaustion_age: 11
     dc_maturation_cycles: 3
-    description: "Sprint 6 zAvatar COLD 35c — TME inmunosupresor TCGA-PAAD (~$0.45/run)"
-
+    description: Sprint 6 zAvatar COLD 35c — TME inmunosupresor TCGA-PAAD (~$0.45/run)
   zavatar_hot_35c_llm:
     max_agents: 80
     total_cycles: 35
@@ -470,29 +379,7 @@ experiments:
     cytokine_decay: 0.0494
     immune_exhaustion_age: 19
     dc_maturation_cycles: 2
-    description: "Sprint 6 zAvatar HOT 35c — TME inmuno-activo TCGA-PAAD (~$0.45/run)"
-
-  # ── Sprint 7A: Multi-LLM ablation ─────────────────────────────────────────
-  #
-  # Objetivo: determinar si el patrón NK→CD8⁺ depende del modelo LLM específico
-  # o emerge de la topología causal independientemente del motor de lenguaje.
-  #
-  # Hipótesis H_multi:
-  #   Si el patrón persiste con Haiku, Sonnet y base → dinámica estructural
-  #   Si el patrón colapsa con base → conocimiento biomédico previo en pesos
-  #
-  # Diseño:
-  #   3 condiciones × 3 runs = 9 runs LLM
-  #   Misma topología, mismos parámetros biológicos, solo cambia AGENT_MODEL
-  #
-  # Coste estimado:
-  #   Haiku:  ~$0.70/run × 3 = ~$2.10
-  #   Sonnet: ~$8.00/run × 3 = ~$24.00  (Sonnet ~11x más caro que Haiku)
-  #   Total:  ~$26.10 (Haiku ya ejecutado como bridge_n10_llm)
-  #
-  # Nota: Haiku baseline = bridge_n10_llm (ya disponible, n=10)
-  # Solo necesitamos ejecutar Sonnet (n=3 para comparación directa)
-
+    description: Sprint 6 zAvatar HOT 35c — TME inmuno-activo TCGA-PAAD (~$0.45/run)
   sprint7a_sonnet_llm:
     max_agents: 80
     total_cycles: 35
@@ -504,10 +391,9 @@ experiments:
     n_dendritic_cells: 3
     opus_analysis_interval: 25
     llm_provider: anthropic
-    agent_model: "claude-sonnet-4-5-20250929"
+    agent_model: claude-sonnet-4-5-20250929
     simulation_seed: 42
-    description: "Sprint 7A — Sonnet agentes (bridge config, 35c, seed=42, ~$8/run)"
-
+    description: Sprint 7A — Sonnet agentes (bridge config, 35c, seed=42, ~$8/run)
   sprint7a_haiku_llm:
     max_agents: 80
     total_cycles: 35
@@ -519,10 +405,10 @@ experiments:
     n_dendritic_cells: 3
     opus_analysis_interval: 25
     llm_provider: anthropic
-    agent_model: "claude-haiku-4-5-20251001"
+    agent_model: claude-haiku-4-5-20251001
     simulation_seed: 42
-    description: "Sprint 7A — Haiku agentes baseline (bridge config, 35c, seed=42, ~$0.45/run)"
-
+    description: Sprint 7A — Haiku agentes baseline (bridge config, 35c, seed=42,
+      ~$0.45/run)
   sprint7a_haiku_noseed:
     max_agents: 80
     total_cycles: 35
@@ -534,200 +420,162 @@ experiments:
     n_dendritic_cells: 3
     opus_analysis_interval: 25
     llm_provider: anthropic
-    agent_model: "claude-haiku-4-5-20251001"
-    description: "Sprint 7A — Haiku sin seed (control estocástico, ~$0.45/run)"
-# OncoBiome Swarm — Plan de Rigor Científico Pre-Publicación
-# Fecha: 2026-03-26
-# Objetivo: cerrar todos los gaps antes de envío a revista
-
-# ══════════════════════════════════════════════════════════════════════
-# SPRINT 10A — Sonnet n=10 (CRÍTICO, ~$70)
-# Motivo: n=3 insuficiente para Fisher exacto. Revisor lo rechazará.
-# Target: Fisher exacto balanceado Haiku n=10 vs Sonnet n=10
-# Sin esto el hallazgo central del paper es estadísticamente débil.
-# ══════════════════════════════════════════════════════════════════════
-sprint10a_sonnet_r4:
-  max_agents: 80
-  total_cycles: 35
-  n_tumor_cells: 12
-  n_immune_cells: 8
-  n_macrophages: 3
-  n_phytochemicals: 2
-  n_nk_cells: 4
-  n_dendritic_cells: 3
-  opus_analysis_interval: 35
-  llm_provider: anthropic
-  agent_model: "claude-sonnet-4-5-20250929"
-  description: "Sprint 10A — Sonnet R4 (n=10 target, sin seed, ~$8/run)"
-
-sprint10a_sonnet_r5:
-  max_agents: 80
-  total_cycles: 35
-  n_tumor_cells: 12
-  n_immune_cells: 8
-  n_macrophages: 3
-  n_phytochemicals: 2
-  n_nk_cells: 4
-  n_dendritic_cells: 3
-  opus_analysis_interval: 35
-  llm_provider: anthropic
-  agent_model: "claude-sonnet-4-5-20250929"
-  description: "Sprint 10A — Sonnet R5"
-
-sprint10a_sonnet_r6:
-  max_agents: 80
-  total_cycles: 35
-  n_tumor_cells: 12
-  n_immune_cells: 8
-  n_macrophages: 3
-  n_phytochemicals: 2
-  n_nk_cells: 4
-  n_dendritic_cells: 3
-  opus_analysis_interval: 35
-  llm_provider: anthropic
-  agent_model: "claude-sonnet-4-5-20250929"
-  description: "Sprint 10A — Sonnet R6"
-
-sprint10a_sonnet_r7:
-  max_agents: 80
-  total_cycles: 35
-  n_tumor_cells: 12
-  n_immune_cells: 8
-  n_macrophages: 3
-  n_phytochemicals: 2
-  n_nk_cells: 4
-  n_dendritic_cells: 3
-  opus_analysis_interval: 35
-  llm_provider: anthropic
-  agent_model: "claude-sonnet-4-5-20250929"
-  description: "Sprint 10A — Sonnet R7"
-
-sprint10a_sonnet_r8:
-  max_agents: 80
-  total_cycles: 35
-  n_tumor_cells: 12
-  n_immune_cells: 8
-  n_macrophages: 3
-  n_phytochemicals: 2
-  n_nk_cells: 4
-  n_dendritic_cells: 3
-  opus_analysis_interval: 35
-  llm_provider: anthropic
-  agent_model: "claude-sonnet-4-5-20250929"
-  description: "Sprint 10A — Sonnet R8"
-
-sprint10a_sonnet_r9:
-  max_agents: 80
-  total_cycles: 35
-  n_tumor_cells: 12
-  n_immune_cells: 8
-  n_macrophages: 3
-  n_phytochemicals: 2
-  n_nk_cells: 4
-  n_dendritic_cells: 3
-  opus_analysis_interval: 35
-  llm_provider: anthropic
-  agent_model: "claude-sonnet-4-5-20250929"
-  description: "Sprint 10A — Sonnet R9"
-
-sprint10a_sonnet_r10:
-  max_agents: 80
-  total_cycles: 35
-  n_tumor_cells: 12
-  n_immune_cells: 8
-  n_macrophages: 3
-  n_phytochemicals: 2
-  n_nk_cells: 4
-  n_dendritic_cells: 3
-  opus_analysis_interval: 35
-  llm_provider: anthropic
-  agent_model: "claude-sonnet-4-5-20250929"
-  description: "Sprint 10A — Sonnet R10"
-
-# ══════════════════════════════════════════════════════════════════════
-# SPRINT 10B — Ablación prompt mínimo vs completo ($0 o ~$5)
-# Motivo: GAP auditoria — no podemos descartar que el patrón venga
-# del prompt específico, no de la topología causal.
-# Diseño: prompt_minimal (1 línea: "decide: PROLIFERATE/MIGRATE/SIGNAL/QUIESCE/DIE")
-# vs prompt_completo (actual con contexto biológico)
-# ══════════════════════════════════════════════════════════════════════
-ablation_prompt_minimal_llm:
-  max_agents: 80
-  total_cycles: 35
-  n_tumor_cells: 12
-  n_immune_cells: 8
-  n_macrophages: 3
-  n_phytochemicals: 2
-  n_nk_cells: 4
-  n_dendritic_cells: 3
-  opus_analysis_interval: 35
-  llm_provider: anthropic
-  agent_model: "claude-haiku-4-5-20251001"
-  prompt_mode: "minimal"
-  description: "Sprint 10B — Prompt mínimo (1 línea), Haiku, n=5 (~$0.45/run)"
-
-ablation_prompt_full_llm:
-  max_agents: 80
-  total_cycles: 35
-  n_tumor_cells: 12
-  n_immune_cells: 8
-  n_macrophages: 3
-  n_phytochemicals: 2
-  n_nk_cells: 4
-  n_dendritic_cells: 3
-  opus_analysis_interval: 35
-  llm_provider: anthropic
-  agent_model: "claude-haiku-4-5-20251001"
-  prompt_mode: "full"
-  description: "Sprint 10B — Prompt completo (control), Haiku, n=5 (~$0.45/run)"
-
-# ══════════════════════════════════════════════════════════════════════
-# SPRINT 11A — zAvatar n=10 HOT vs COLD (~$9)
-# Motivo: n=3 da p=0.099 NS. Con n=10 la potencia sube a ~0.75.
-# Target: Mann-Whitney formal con poder estadístico adecuado.
-# ══════════════════════════════════════════════════════════════════════
-zavatar_cold_35c_r4:
-  max_agents: 80
-  total_cycles: 35
-  n_tumor_cells: 12
-  n_immune_cells: 8
-  n_macrophages: 3
-  n_phytochemicals: 2
-  n_nk_cells: 4
-  n_dendritic_cells: 3
-  opus_analysis_interval: 35
-  llm_provider: anthropic
-  agent_model: "claude-haiku-4-5-20251001"
-  description: "Sprint 11A — COLD R4 (target n=10)"
-
-zavatar_hot_35c_r4:
-  max_agents: 80
-  total_cycles: 35
-  n_tumor_cells: 12
-  n_immune_cells: 8
-  n_macrophages: 3
-  n_phytochemicals: 2
-  n_nk_cells: 4
-  n_dendritic_cells: 3
-  opus_analysis_interval: 35
-  llm_provider: anthropic
-  agent_model: "claude-haiku-4-5-20251001"
-  description: "Sprint 11A — HOT R4 (target n=10)"
-
-# ══════════════════════════════════════════════════════════════════════
-# SPRINT 11B — Rule engine n=10 como control $0
-# Motivo: necesitamos baseline determinista con n=10 para comparar
-# formalmente LLM vs reglas con el mismo poder estadístico.
-# ══════════════════════════════════════════════════════════════════════
-bridge_rule_n10:
-  max_agents: 80
-  total_cycles: 35
-  n_tumor_cells: 12
-  n_immune_cells: 8
-  n_macrophages: 3
-  n_phytochemicals: 2
-  n_nk_cells: 4
-  n_dendritic_cells: 3
-  opus_analysis_interval: 35
-  llm_provider: rule_engine
-  description: "Sprint 11B — Rule engine n=10 control ($0)"
+    agent_model: claude-haiku-4-5-20251001
+    description: Sprint 7A — Haiku sin seed (control estocástico, ~$0.45/run)
+  sprint10a_sonnet_r4:
+    max_agents: 80
+    total_cycles: 35
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 35
+    llm_provider: anthropic
+    agent_model: claude-sonnet-4-5-20250929
+    description: Sprint 10A — Sonnet R4 (n=10 target, sin seed, ~$8/run)
+  sprint10a_sonnet_r5:
+    max_agents: 80
+    total_cycles: 35
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 35
+    llm_provider: anthropic
+    agent_model: claude-sonnet-4-5-20250929
+    description: Sprint 10A — Sonnet R5
+  sprint10a_sonnet_r6:
+    max_agents: 80
+    total_cycles: 35
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 35
+    llm_provider: anthropic
+    agent_model: claude-sonnet-4-5-20250929
+    description: Sprint 10A — Sonnet R6
+  sprint10a_sonnet_r7:
+    max_agents: 80
+    total_cycles: 35
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 35
+    llm_provider: anthropic
+    agent_model: claude-sonnet-4-5-20250929
+    description: Sprint 10A — Sonnet R7
+  sprint10a_sonnet_r8:
+    max_agents: 80
+    total_cycles: 35
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 35
+    llm_provider: anthropic
+    agent_model: claude-sonnet-4-5-20250929
+    description: Sprint 10A — Sonnet R8
+  sprint10a_sonnet_r9:
+    max_agents: 80
+    total_cycles: 35
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 35
+    llm_provider: anthropic
+    agent_model: claude-sonnet-4-5-20250929
+    description: Sprint 10A — Sonnet R9
+  sprint10a_sonnet_r10:
+    max_agents: 80
+    total_cycles: 35
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 35
+    llm_provider: anthropic
+    agent_model: claude-sonnet-4-5-20250929
+    description: Sprint 10A — Sonnet R10
+  ablation_prompt_minimal_llm:
+    max_agents: 80
+    total_cycles: 35
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 35
+    llm_provider: anthropic
+    agent_model: claude-haiku-4-5-20251001
+    prompt_mode: minimal
+    description: Sprint 10B — Prompt mínimo (1 línea), Haiku, n=5 (~$0.45/run)
+  ablation_prompt_full_llm:
+    max_agents: 80
+    total_cycles: 35
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 35
+    llm_provider: anthropic
+    agent_model: claude-haiku-4-5-20251001
+    prompt_mode: full
+    description: Sprint 10B — Prompt completo (control), Haiku, n=5 (~$0.45/run)
+  zavatar_cold_35c_r4:
+    max_agents: 80
+    total_cycles: 35
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 35
+    llm_provider: anthropic
+    agent_model: claude-haiku-4-5-20251001
+    description: Sprint 11A — COLD R4 (target n=10)
+  zavatar_hot_35c_r4:
+    max_agents: 80
+    total_cycles: 35
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 35
+    llm_provider: anthropic
+    agent_model: claude-haiku-4-5-20251001
+    description: Sprint 11A — HOT R4 (target n=10)
+  bridge_rule_n10:
+    max_agents: 80
+    total_cycles: 35
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 35
+    llm_provider: rule_engine
+    description: Sprint 11B — Rule engine n=10 control ($0)
