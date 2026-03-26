@@ -90,7 +90,8 @@ class SimulationEngine:
             logger.info("Seed aleatorio: no fijado (stochastic mode)")
 
         total = cycles or self._cfg.total_cycles
-        mode = "rule-engine ($0)" if self._no_llm else "smart-batch (Haiku)"
+        _model_short = self.llm._agent_model.split("-")[2] if hasattr(self.llm, "_agent_model") else "haiku"
+        mode = "rule-engine ($0)" if self._no_llm else f"smart-batch ({_model_short})"
         logger.info("Iniciando simulación: %d ciclos, %d agentes, modo=%s", total, len(self.env.agents), mode)
         self.collector.record_initial_params(self.env)
 

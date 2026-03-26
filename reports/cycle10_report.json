@@ -6,152 +6,34 @@
   "initial_parameters": {
     "grid_size": 100,
     "agents_by_type": {
-      "TumorCell": 8
+      "TumorCell": 12,
+      "ImmuneCell": 8,
+      "MacrophageAgent": 3,
+      "PhytochemicalAgent": 2,
+      "NKCell": 4,
+      "DendriticCell": 3
     },
-    "total_agents": 8
+    "total_agents": 32
   },
   "state_at_cycle": {
     "cycle": 10,
     "population_by_type": {
-      "TumorCell": 16
+      "TumorCell": 21,
+      "ImmuneCell": 8,
+      "MacrophageAgent": 3,
+      "PhytochemicalAgent": 2,
+      "NKCell": 4,
+      "DendriticCell": 3
     },
     "agents": [
       {
-        "agent_id": "df29cd67",
+        "agent_id": "1a061abc",
         "agent_type": "TumorCell",
         "position": {
-          "x": 10.0,
-          "y": 50.0
+          "x": 0.0,
+          "y": 55.82
         },
-        "energy": 0.68,
-        "age": 0,
-        "alive": true,
-        "metadata": {
-          "mutation": "KRAS_G12D",
-          "division_count": 1,
-          "hypoxic": false
-        }
-      },
-      {
-        "agent_id": "aa2c7f3b",
-        "agent_type": "TumorCell",
-        "position": {
-          "x": 18.0,
-          "y": 50.0
-        },
-        "energy": 0.68,
-        "age": 0,
-        "alive": true,
-        "metadata": {
-          "mutation": "KRAS_G12D",
-          "division_count": 1,
-          "hypoxic": false
-        }
-      },
-      {
-        "agent_id": "53dc3bc1",
-        "agent_type": "TumorCell",
-        "position": {
-          "x": 26.0,
-          "y": 50.0
-        },
-        "energy": 0.68,
-        "age": 0,
-        "alive": true,
-        "metadata": {
-          "mutation": "KRAS_G12D",
-          "division_count": 1,
-          "hypoxic": false
-        }
-      },
-      {
-        "agent_id": "2424b271",
-        "agent_type": "TumorCell",
-        "position": {
-          "x": 34.0,
-          "y": 50.0
-        },
-        "energy": 0.68,
-        "age": 0,
-        "alive": true,
-        "metadata": {
-          "mutation": "KRAS_G12D",
-          "division_count": 1,
-          "hypoxic": false
-        }
-      },
-      {
-        "agent_id": "940c2066",
-        "agent_type": "TumorCell",
-        "position": {
-          "x": 42.0,
-          "y": 50.0
-        },
-        "energy": 0.68,
-        "age": 0,
-        "alive": true,
-        "metadata": {
-          "mutation": "KRAS_G12D",
-          "division_count": 1,
-          "hypoxic": false
-        }
-      },
-      {
-        "agent_id": "5a604e73",
-        "agent_type": "TumorCell",
-        "position": {
-          "x": 50.0,
-          "y": 50.0
-        },
-        "energy": 0.68,
-        "age": 0,
-        "alive": true,
-        "metadata": {
-          "mutation": "KRAS_G12D",
-          "division_count": 1,
-          "hypoxic": false
-        }
-      },
-      {
-        "agent_id": "99930d75",
-        "agent_type": "TumorCell",
-        "position": {
-          "x": 58.0,
-          "y": 50.0
-        },
-        "energy": 0.68,
-        "age": 0,
-        "alive": true,
-        "metadata": {
-          "mutation": "KRAS_G12D",
-          "division_count": 1,
-          "hypoxic": false
-        }
-      },
-      {
-        "agent_id": "dd5dcda9",
-        "agent_type": "TumorCell",
-        "position": {
-          "x": 66.0,
-          "y": 50.0
-        },
-        "energy": 0.68,
-        "age": 0,
-        "alive": true,
-        "metadata": {
-          "mutation": "KRAS_G12D",
-          "division_count": 1,
-          "hypoxic": false
-        }
-      },
-      {
-        "agent_id": "febd72f9",
-        "agent_type": "TumorCell",
-        "position": {
-          "x": 13.0,
-          "y": 53.0
-        },
-        "energy": 0.68,
+        "energy": 0.4,
         "age": 0,
         "alive": true,
         "metadata": {
@@ -161,13 +43,13 @@
         }
       },
       {
-        "agent_id": "12521eb4",
+        "agent_id": "c49fed69",
         "agent_type": "TumorCell",
         "position": {
-          "x": 15.0,
-          "y": 47.0
+          "x": 79.06,
+          "y": 61.45
         },
-        "energy": 0.68,
+        "energy": 0.48,
         "age": 0,
         "alive": true,
         "metadata": {
@@ -177,13 +59,13 @@
         }
       },
       {
-        "agent_id": "72037f01",
+        "agent_id": "f357f967",
         "agent_type": "TumorCell",
         "position": {
-          "x": 23.0,
-          "y": 47.0
+          "x": 41.72,
+          "y": 36.62
         },
-        "energy": 0.68,
+        "energy": 0.4,
         "age": 0,
         "alive": true,
         "metadata": {
@@ -193,13 +75,13 @@
         }
       },
       {
-        "agent_id": "6e14aba7",
+        "agent_id": "802be1e8",
         "agent_type": "TumorCell",
         "position": {
-          "x": 34.0,
-          "y": 53.0
+          "x": 74.79,
+          "y": 52.61
         },
-        "energy": 0.68,
+        "energy": 0.4,
         "age": 0,
         "alive": true,
         "metadata": {
@@ -209,13 +91,45 @@
         }
       },
       {
-        "agent_id": "cad9f8c2",
+        "agent_id": "3e10ec8b",
         "agent_type": "TumorCell",
         "position": {
-          "x": 39.0,
-          "y": 53.0
+          "x": 54.24,
+          "y": 19.54
         },
-        "energy": 0.68,
+        "energy": 0.31,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "mutation": "KRAS_G12D",
+          "division_count": 2,
+          "hypoxic": false
+        }
+      },
+      {
+        "agent_id": "8e11d1e7",
+        "agent_type": "TumorCell",
+        "position": {
+          "x": 80.81,
+          "y": 77.25
+        },
+        "energy": 0.55,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "mutation": "KRAS_G12D",
+          "division_count": 1,
+          "hypoxic": false
+        }
+      },
+      {
+        "agent_id": "a572e5ff",
+        "agent_type": "TumorCell",
+        "position": {
+          "x": 73.15,
+          "y": 59.82
+        },
+        "energy": 0.4,
         "age": 0,
         "alive": true,
         "metadata": {
@@ -225,13 +139,13 @@
         }
       },
       {
-        "agent_id": "10fa6d81",
+        "agent_id": "56469cf3",
         "agent_type": "TumorCell",
         "position": {
-          "x": 47.0,
-          "y": 50.0
+          "x": 45.46,
+          "y": 51.84
         },
-        "energy": 0.68,
+        "energy": 0.45,
         "age": 0,
         "alive": true,
         "metadata": {
@@ -241,13 +155,29 @@
         }
       },
       {
-        "agent_id": "c9e39806",
+        "agent_id": "e2dc1657",
         "agent_type": "TumorCell",
         "position": {
-          "x": 61.0,
-          "y": 50.0
+          "x": 38.5,
+          "y": 99.0
         },
-        "energy": 0.68,
+        "energy": 0.47,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "mutation": "KRAS_G12D",
+          "division_count": 1,
+          "hypoxic": false
+        }
+      },
+      {
+        "agent_id": "239cc0ab",
+        "agent_type": "TumorCell",
+        "position": {
+          "x": 52.06,
+          "y": 27.87
+        },
+        "energy": 0.4,
         "age": 0,
         "alive": true,
         "metadata": {
@@ -257,13 +187,460 @@
         }
       },
       {
-        "agent_id": "482ada1e",
+        "agent_id": "20ecd6e5",
         "agent_type": "TumorCell",
         "position": {
-          "x": 66.0,
-          "y": 53.0
+          "x": 84.82,
+          "y": 55.62
         },
-        "energy": 0.68,
+        "energy": 0.52,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "mutation": "KRAS_G12D",
+          "division_count": 1,
+          "hypoxic": false
+        }
+      },
+      {
+        "agent_id": "77e3bea2",
+        "agent_type": "ImmuneCell",
+        "position": {
+          "x": 66.93,
+          "y": 42.77
+        },
+        "energy": 0.65,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "kills_count": 0
+        }
+      },
+      {
+        "agent_id": "cb41144c",
+        "agent_type": "ImmuneCell",
+        "position": {
+          "x": 45.55,
+          "y": 73.69
+        },
+        "energy": 0.55,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "kills_count": 1
+        }
+      },
+      {
+        "agent_id": "ae07e41b",
+        "agent_type": "ImmuneCell",
+        "position": {
+          "x": 3.79,
+          "y": 57.74
+        },
+        "energy": 0.65,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "kills_count": 0
+        }
+      },
+      {
+        "agent_id": "1fd7c6b6",
+        "agent_type": "ImmuneCell",
+        "position": {
+          "x": 58.73,
+          "y": 42.39
+        },
+        "energy": 0.65,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "kills_count": 0
+        }
+      },
+      {
+        "agent_id": "7a53a939",
+        "agent_type": "ImmuneCell",
+        "position": {
+          "x": 68.52,
+          "y": 59.78
+        },
+        "energy": 0.65,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "kills_count": 0
+        }
+      },
+      {
+        "agent_id": "40235f2a",
+        "agent_type": "ImmuneCell",
+        "position": {
+          "x": 69.82,
+          "y": 61.15
+        },
+        "energy": 0.65,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "kills_count": 0
+        }
+      },
+      {
+        "agent_id": "12d836e7",
+        "agent_type": "ImmuneCell",
+        "position": {
+          "x": 48.17,
+          "y": 54.75
+        },
+        "energy": 0.65,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "kills_count": 0
+        }
+      },
+      {
+        "agent_id": "9cfbbde4",
+        "agent_type": "ImmuneCell",
+        "position": {
+          "x": 49.5,
+          "y": 54.03
+        },
+        "energy": 0.65,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "kills_count": 0
+        }
+      },
+      {
+        "agent_id": "fc4c6a3e",
+        "agent_type": "MacrophageAgent",
+        "position": {
+          "x": 2.77,
+          "y": 75.69
+        },
+        "energy": 0.96,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "polarization": "M0"
+        }
+      },
+      {
+        "agent_id": "53b6e34e",
+        "agent_type": "MacrophageAgent",
+        "position": {
+          "x": 73.03,
+          "y": 88.29
+        },
+        "energy": 0.8,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "polarization": "M0"
+        }
+      },
+      {
+        "agent_id": "a647c219",
+        "agent_type": "MacrophageAgent",
+        "position": {
+          "x": 32.85,
+          "y": 84.08
+        },
+        "energy": 0.84,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "polarization": "M0"
+        }
+      },
+      {
+        "agent_id": "ca8f65a2",
+        "agent_type": "PhytochemicalAgent",
+        "position": {
+          "x": 5.13,
+          "y": 85.41
+        },
+        "energy": 1.0,
+        "age": 10,
+        "alive": true,
+        "metadata": {
+          "compound": "curcumina",
+          "concentration": 1.0,
+          "ttl": 28
+        }
+      },
+      {
+        "agent_id": "d0a74d5d",
+        "agent_type": "PhytochemicalAgent",
+        "position": {
+          "x": 48.99,
+          "y": 93.58
+        },
+        "energy": 1.0,
+        "age": 10,
+        "alive": true,
+        "metadata": {
+          "compound": "curcumina",
+          "concentration": 1.0,
+          "ttl": 28
+        }
+      },
+      {
+        "agent_id": "22029b62",
+        "agent_type": "NKCell",
+        "position": {
+          "x": 54.95,
+          "y": 58.6
+        },
+        "energy": 0.6,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "kills_count": 0
+        }
+      },
+      {
+        "agent_id": "f55389ba",
+        "agent_type": "NKCell",
+        "position": {
+          "x": 47.94,
+          "y": 55.15
+        },
+        "energy": 0.6,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "kills_count": 0
+        }
+      },
+      {
+        "agent_id": "efb0d800",
+        "agent_type": "NKCell",
+        "position": {
+          "x": 46.16,
+          "y": 55.99
+        },
+        "energy": 0.6,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "kills_count": 0
+        }
+      },
+      {
+        "agent_id": "2bd960e0",
+        "agent_type": "NKCell",
+        "position": {
+          "x": 43.34,
+          "y": 75.2
+        },
+        "energy": 0.6,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "kills_count": 0
+        }
+      },
+      {
+        "agent_id": "00d12ce1",
+        "agent_type": "DendriticCell",
+        "position": {
+          "x": 70.23,
+          "y": 38.76
+        },
+        "energy": 1.0,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "maturation_state": "immature",
+          "ifng_cycles_above": 0
+        }
+      },
+      {
+        "agent_id": "1343fd02",
+        "agent_type": "DendriticCell",
+        "position": {
+          "x": 62.33,
+          "y": 57.47
+        },
+        "energy": 1.0,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "maturation_state": "immature",
+          "ifng_cycles_above": 0
+        }
+      },
+      {
+        "agent_id": "4287efd0",
+        "agent_type": "DendriticCell",
+        "position": {
+          "x": 83.61,
+          "y": 98.55
+        },
+        "energy": 1.0,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "maturation_state": "immature",
+          "ifng_cycles_above": 0
+        }
+      },
+      {
+        "agent_id": "de49e5d1",
+        "agent_type": "TumorCell",
+        "position": {
+          "x": 51.24,
+          "y": 19.54
+        },
+        "energy": 0.36,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "mutation": "KRAS_G12D",
+          "division_count": 1,
+          "hypoxic": false
+        }
+      },
+      {
+        "agent_id": "70ae427d",
+        "agent_type": "TumorCell",
+        "position": {
+          "x": 76.6,
+          "y": 42.66
+        },
+        "energy": 0.2,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "mutation": "KRAS_G12D",
+          "division_count": 1,
+          "hypoxic": false
+        }
+      },
+      {
+        "agent_id": "04ff0694",
+        "agent_type": "TumorCell",
+        "position": {
+          "x": 42.18,
+          "y": 75.93
+        },
+        "energy": 0.45,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "mutation": "KRAS_G12D",
+          "division_count": 0,
+          "hypoxic": false
+        }
+      },
+      {
+        "agent_id": "ee76ef39",
+        "agent_type": "TumorCell",
+        "position": {
+          "x": 79.31,
+          "y": 54.78
+        },
+        "energy": 0.21,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "mutation": "KRAS_G12D",
+          "division_count": 1,
+          "hypoxic": true
+        }
+      },
+      {
+        "agent_id": "47d6d60d",
+        "agent_type": "TumorCell",
+        "position": {
+          "x": 54.24,
+          "y": 16.54
+        },
+        "energy": 0.28,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "mutation": "KRAS_G12D",
+          "division_count": 1,
+          "hypoxic": false
+        }
+      },
+      {
+        "agent_id": "1a1ebca5",
+        "agent_type": "TumorCell",
+        "position": {
+          "x": 82.31,
+          "y": 51.78
+        },
+        "energy": 0.28,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "mutation": "KRAS_G12D",
+          "division_count": 1,
+          "hypoxic": false
+        }
+      },
+      {
+        "agent_id": "6dc33016",
+        "agent_type": "TumorCell",
+        "position": {
+          "x": 57.24,
+          "y": 19.54
+        },
+        "energy": 0.26,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "mutation": "KRAS_G12D",
+          "division_count": 1,
+          "hypoxic": false
+        }
+      },
+      {
+        "agent_id": "ee6c96dd",
+        "agent_type": "TumorCell",
+        "position": {
+          "x": 85.31,
+          "y": 51.78
+        },
+        "energy": 0.26,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "mutation": "KRAS_G12D",
+          "division_count": 1,
+          "hypoxic": false
+        }
+      },
+      {
+        "agent_id": "3f582860",
+        "agent_type": "TumorCell",
+        "position": {
+          "x": 57.24,
+          "y": 22.54
+        },
+        "energy": 0.52,
+        "age": 0,
+        "alive": true,
+        "metadata": {
+          "mutation": "KRAS_G12D",
+          "division_count": 0,
+          "hypoxic": false
+        }
+      },
+      {
+        "agent_id": "d27e5bbb",
+        "agent_type": "TumorCell",
+        "position": {
+          "x": 82.31,
+          "y": 48.78
+        },
+        "energy": 0.52,
         "age": 0,
         "alive": true,
         "metadata": {
@@ -277,9 +654,9 @@
   "cytokine_levels_by_cycle": [
     {
       "cycle": 1,
-      "IL-6_mean": 0.0,
-      "IL-6_max": 0.0,
-      "IL-6_total": 0.0,
+      "IL-6_mean": 0.00023,
+      "IL-6_max": 0.015092,
+      "IL-6_total": 2.304,
       "VEGF_mean": 0.0,
       "VEGF_max": 0.0,
       "VEGF_total": 0.0,
@@ -289,9 +666,9 @@
     },
     {
       "cycle": 2,
-      "IL-6_mean": 0.0,
-      "IL-6_max": 0.0,
-      "IL-6_total": 0.0,
+      "IL-6_mean": 0.000452,
+      "IL-6_max": 0.02432,
+      "IL-6_total": 4.5158,
       "VEGF_mean": 0.0,
       "VEGF_max": 0.0,
       "VEGF_total": 0.0,
@@ -301,9 +678,9 @@
     },
     {
       "cycle": 3,
-      "IL-6_mean": 0.0,
-      "IL-6_max": 0.0,
-      "IL-6_total": 0.0,
+      "IL-6_mean": 0.000664,
+      "IL-6_max": 0.031421,
+      "IL-6_total": 6.6392,
       "VEGF_mean": 0.0,
       "VEGF_max": 0.0,
       "VEGF_total": 0.0,
@@ -313,9 +690,9 @@
     },
     {
       "cycle": 4,
-      "IL-6_mean": 0.0,
-      "IL-6_max": 0.0,
-      "IL-6_total": 0.0,
+      "IL-6_mean": 0.000868,
+      "IL-6_max": 0.037189,
+      "IL-6_total": 8.6776,
       "VEGF_mean": 0.0,
       "VEGF_max": 0.0,
       "VEGF_total": 0.0,
@@ -325,9 +702,9 @@
     },
     {
       "cycle": 5,
-      "IL-6_mean": 0.0,
-      "IL-6_max": 0.0,
-      "IL-6_total": 0.0,
+      "IL-6_mean": 0.001063,
+      "IL-6_max": 0.042,
+      "IL-6_total": 10.6345,
       "VEGF_mean": 0.0,
       "VEGF_max": 0.0,
       "VEGF_total": 0.0,
@@ -337,80 +714,95 @@
     },
     {
       "cycle": 6,
-      "IL-6_mean": 0.0,
-      "IL-6_max": 0.0,
-      "IL-6_total": 0.0,
-      "VEGF_mean": 0.0,
-      "VEGF_max": 0.0,
-      "VEGF_total": 0.0,
+      "IL-6_mean": 0.001021,
+      "IL-6_max": 0.030992,
+      "IL-6_total": 10.2092,
+      "VEGF_mean": 0.000115,
+      "VEGF_max": 0.019755,
+      "VEGF_total": 1.152,
       "IFN-γ_mean": 0.0,
       "IFN-γ_max": 0.0,
       "IFN-γ_total": 0.0
     },
     {
       "cycle": 7,
-      "IL-6_mean": 0.0,
-      "IL-6_max": 0.0,
-      "IL-6_total": 0.0,
-      "VEGF_mean": 0.0,
-      "VEGF_max": 0.0,
-      "VEGF_total": 0.0,
+      "IL-6_mean": 0.001038,
+      "IL-6_max": 0.027902,
+      "IL-6_total": 10.3768,
+      "VEGF_mean": 0.000312,
+      "VEGF_max": 0.034052,
+      "VEGF_total": 3.1219,
       "IFN-γ_mean": 0.0,
       "IFN-γ_max": 0.0,
       "IFN-γ_total": 0.0
     },
     {
       "cycle": 8,
-      "IL-6_mean": 0.0,
-      "IL-6_max": 0.0,
-      "IL-6_total": 0.0,
-      "VEGF_mean": 0.0,
-      "VEGF_max": 0.0,
-      "VEGF_total": 0.0,
+      "IL-6_mean": 0.001025,
+      "IL-6_max": 0.021235,
+      "IL-6_total": 10.2497,
+      "VEGF_mean": 0.000473,
+      "VEGF_max": 0.040894,
+      "VEGF_total": 4.725,
       "IFN-γ_mean": 0.0,
       "IFN-γ_max": 0.0,
       "IFN-γ_total": 0.0
     },
     {
       "cycle": 9,
-      "IL-6_mean": 0.0,
-      "IL-6_max": 0.0,
-      "IL-6_total": 0.0,
-      "VEGF_mean": 0.0,
-      "VEGF_max": 0.0,
-      "VEGF_total": 0.0,
+      "IL-6_mean": 0.000984,
+      "IL-6_max": 0.018154,
+      "IL-6_total": 9.8397,
+      "VEGF_mean": 0.000598,
+      "VEGF_max": 0.046431,
+      "VEGF_total": 5.976,
       "IFN-γ_mean": 0.0,
       "IFN-γ_max": 0.0,
       "IFN-γ_total": 0.0
     },
     {
       "cycle": 10,
-      "IL-6_mean": 0.0,
-      "IL-6_max": 0.0,
-      "IL-6_total": 0.0,
-      "VEGF_mean": 0.0,
-      "VEGF_max": 0.0,
-      "VEGF_total": 0.0,
+      "IL-6_mean": 0.000945,
+      "IL-6_max": 0.015723,
+      "IL-6_total": 9.4461,
+      "VEGF_mean": 0.000775,
+      "VEGF_max": 0.053633,
+      "VEGF_total": 7.753,
       "IFN-γ_mean": 0.0,
       "IFN-γ_max": 0.0,
       "IFN-γ_total": 0.0
     }
   ],
   "cytokine_state_at_report_cycle": {
-    "IL-6_mean": 0.0,
-    "IL-6_max": 0.0,
-    "IL-6_total": 0.0,
-    "VEGF_mean": 0.0,
-    "VEGF_max": 0.0,
-    "VEGF_total": 0.0,
+    "IL-6_mean": 0.000945,
+    "IL-6_max": 0.015723,
+    "IL-6_total": 9.4461,
+    "VEGF_mean": 0.000775,
+    "VEGF_max": 0.053633,
+    "VEGF_total": 7.753,
     "IFN-γ_mean": 0.0,
     "IFN-γ_max": 0.0,
     "IFN-γ_total": 0.0
   },
   "decisions_summary": {
     "TumorCell": {
-      "PROLIFERATE": 8,
-      "QUIESCE": 144
+      "SIGNAL": 43,
+      "PROLIFERATE": 13,
+      "QUIESCE": 72,
+      "MIGRATE": 49
+    },
+    "ImmuneCell": {
+      "MIGRATE": 80
+    },
+    "MacrophageAgent": {
+      "QUIESCE": 20,
+      "MIGRATE": 10
+    },
+    "NKCell": {
+      "MIGRATE": 40
+    },
+    "DendriticCell": {
+      "QUIESCE": 30
     }
   },
   "notable_events": [],
