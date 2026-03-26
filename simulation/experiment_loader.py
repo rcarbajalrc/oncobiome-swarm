@@ -104,6 +104,8 @@ def apply_experiment_to_env(params: dict) -> None:
         "tumor_initial_energy":          "TUMOR_INITIAL_ENERGY",
         "immune_exhaustion_age":         "IMMUNE_EXHAUSTION_AGE",
         "dc_maturation_cycles":          "DC_MATURATION_CYCLES",
+        # Sprint 7B: seed reproducibilidad
+        "simulation_seed":                "SIMULATION_SEED",
     }
 
     for param_key, env_key in mapping.items():

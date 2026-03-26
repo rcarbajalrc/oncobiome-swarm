@@ -68,7 +68,27 @@ class SimulationEngine:
         self._cycle_llm_decisions = 0
         self._cycle_rule_decisions = 0
 
-    async def run(self, cycles: int | None = None) -> None:
+    async def run(self, cycles: int | None = None, seed: int | None = None) -> None:
+        """Ejecuta la simulación.
+
+        Args:
+            cycles: Número de ciclos. Si None, usa config.total_cycles.
+            seed: Semilla aleatoria para reproducibilidad exacta.
+                  Si None, usa SIMULATION_SEED del entorno o None (no determinista).
+                  Pasar seed=42 garantiza runs idénticos con los mismos parámetros.
+        """
+        import numpy as np
+        import random
+
+        # Sprint 7B: seed fijo para reproducibilidad
+        _seed = seed if seed is not None else int(os.environ.get("SIMULATION_SEED", "0")) or None
+        if _seed is not None:
+            np.random.seed(_seed)
+            random.seed(_seed)
+            logger.info("Seed aleatorio fijado: %d (reproducibilidad garantizada)", _seed)
+        else:
+            logger.info("Seed aleatorio: no fijado (stochastic mode)")
+
         total = cycles or self._cfg.total_cycles
         mode = "rule-engine ($0)" if self._no_llm else "smart-batch (Haiku)"
         logger.info("Iniciando simulación: %d ciclos, %d agentes, modo=%s", total, len(self.env.agents), mode)
