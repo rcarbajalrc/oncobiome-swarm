@@ -1,0 +1,142 @@
+{
+  "KRAS_G12D": {
+    "target": {
+      "uniprot": "P01116",
+      "gene": "KRAS",
+      "name": "GTPase KRas",
+      "role_in_tme": "Primary oncogenic driver \u2014 G12D mutation prevents GTP hydrolysis",
+      "ome_relevance": "All tumor cells express KRAS G12D; downstream MAPK/PI3K drives proliferation",
+      "known_inhibitors": [
+        "MRTX1133 (IC50=0.7nM)",
+        "ERAS-5024 (single-digit nM)",
+        "RMC-9805/Zoldonrasib (Phase 1, ORR=61%)"
+      ],
+      "pocket": "Switch-II pocket (GDP state), Asp12 covalent site (GTP state)",
+      "oncobiome_parameter": "tumor_proliferation_rate",
+      "sprint_relevance": "Dominant in all 65+ runs; Opus repeatedly identifies as primary node"
+    },
+    "alphafold": {
+      "entry_id": "AF-P01116-F1",
+      "gene": "KRAS",
+      "organism": "Homo sapiens",
+      "sequence_length": "N/A",
+      "model_created": "2025-08-01T00:00:00Z",
+      "pdb_file": null
+    },
+    "structural_analysis": {
+      "error": "PDB download failed"
+    }
+  },
+  "VEGFA": {
+    "target": {
+      "uniprot": "P15692",
+      "gene": "VEGFA",
+      "name": "Vascular endothelial growth factor A",
+      "role_in_tme": "Angiogenesis, immunosuppression via DC tolerization",
+      "ome_relevance": "VEGF:IFN-\u03b3 ratio >10:1 in COLD avatar; Phenomenon #15: 58:1 in HOT avatar",
+      "known_inhibitors": [
+        "Bevacizumab (VEGF-A mAb)",
+        "Ramucirumab (VEGFR2)",
+        "Axitinib (VEGFR TKI)"
+      ],
+      "pocket": "VEGFR1/2 receptor-binding interface",
+      "oncobiome_parameter": "cytokine_decay (reduced by VEGFA expression)",
+      "sprint_relevance": "VEGF dominant cytokine in all Haiku runs; VEGF:IFN-\u03b3 ratio key TME metric Sprint 7B"
+    },
+    "alphafold": {
+      "entry_id": "AF-P15692-F1",
+      "gene": "VEGFA",
+      "organism": "Homo sapiens",
+      "sequence_length": "N/A",
+      "model_created": "2025-08-01T00:00:00Z",
+      "pdb_file": null
+    },
+    "structural_analysis": {
+      "error": "PDB download failed"
+    }
+  },
+  "IL6": {
+    "target": {
+      "uniprot": "P05231",
+      "gene": "IL6",
+      "name": "Interleukin-6",
+      "role_in_tme": "M2 macrophage polarization, NK cell suppression, DC tolerization",
+      "ome_relevance": "m2_polarisation_threshold directly derived from IL6 z-score in zAvatar",
+      "known_inhibitors": [
+        "Tocilizumab (IL-6R mAb)",
+        "Siltuximab (IL-6 mAb)",
+        "Sarilumab"
+      ],
+      "pocket": "IL-6R binding site, gp130 interface",
+      "oncobiome_parameter": "m2_polarisation_threshold",
+      "sprint_relevance": "Phenomena #7 (DC tolerization), #9 (TAM emergence), #13 (VEGF:IFN-\u03b3 25:1)"
+    },
+    "alphafold": {
+      "entry_id": "AF-P05231-F1",
+      "gene": "IL6",
+      "organism": "Homo sapiens",
+      "sequence_length": "N/A",
+      "model_created": "2025-08-01T00:00:00Z",
+      "pdb_file": null
+    },
+    "structural_analysis": {
+      "error": "PDB download failed"
+    }
+  },
+  "CD274": {
+    "target": {
+      "uniprot": "Q9NZQ7",
+      "gene": "CD274",
+      "name": "Programmed death-ligand 1 (PD-L1)",
+      "role_in_tme": "CD8+ T cell exhaustion via PD-1 checkpoint engagement",
+      "ome_relevance": "CD274 z-score determines exhaustion_age in zAvatar; COLD has lowest exhaustion_age",
+      "known_inhibitors": [
+        "Atezolizumab",
+        "Durvalumab",
+        "Avelumab",
+        "Pembrolizumab (anti-PD-1)"
+      ],
+      "pocket": "PD-1 binding interface (IgV domain)",
+      "oncobiome_parameter": "immune_exhaustion_age",
+      "sprint_relevance": "NK exhaustion c25 and CD8+ exhaustion c31 mechanistically linked to PD-L1"
+    },
+    "alphafold": {
+      "entry_id": "AF-Q9NZQ7-F1",
+      "gene": "CD274",
+      "organism": "Homo sapiens",
+      "sequence_length": "N/A",
+      "model_created": "2025-08-01T00:00:00Z",
+      "pdb_file": null
+    },
+    "structural_analysis": {
+      "error": "PDB download failed"
+    }
+  },
+  "IL6R": {
+    "target": {
+      "uniprot": "P08887",
+      "gene": "IL6R",
+      "name": "Interleukin-6 receptor subunit alpha",
+      "role_in_tme": "Signal transducer for IL-6; activates JAK1/STAT3 in tumor cells",
+      "ome_relevance": "KRAS G12D tumors overexpress IL6R; creates autocrine IL-6 loop",
+      "known_inhibitors": [
+        "Tocilizumab (IL-6R mAb)",
+        "Sarilumab"
+      ],
+      "pocket": "IL-6 binding D1/D2 domains",
+      "oncobiome_parameter": "m2_polarisation_threshold (upstream of IL6)",
+      "sprint_relevance": "Opus analyses consistently identify IL-6/VEGF axis as TME immunosuppression driver"
+    },
+    "alphafold": {
+      "entry_id": "AF-P08887-F1",
+      "gene": "IL6R",
+      "organism": "Homo sapiens",
+      "sequence_length": "N/A",
+      "model_created": "2025-08-01T00:00:00Z",
+      "pdb_file": null
+    },
+    "structural_analysis": {
+      "error": "PDB download failed"
+    }
+  }
+}
