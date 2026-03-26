@@ -26,24 +26,24 @@ jobs:
         python -m pip install --upgrade pip
         pip install anthropic==0.49.0 pydantic==2.10.6 pydantic-settings==2.7.1
         pip install numpy==1.26.4 python-dotenv==1.0.1 httpx==0.28.1 pyyaml==6.0.2
-        pip install pytest pytest-asyncio
-
-    - name: Install optional (non-blocking)
-      run: |
-        pip install plotly==5.24.1 dash==2.18.2 || true
-        pip install mem0ai==0.1.29 || true
+        pip install pytest==7.4.4 pytest-asyncio==0.23.8
 
     - name: Create .env
       run: |
         echo "ANTHROPIC_API_KEY=sk-ant-test-placeholder" > .env
         echo "SIMULATION_SEED=42" >> .env
 
+    - name: Collect tests (show errors)
+      env:
+        PYTHONPATH: ${{ github.workspace }}
+      run: python -m pytest tests/ --collect-only -q 2>&1 || true
+
     - name: Run tests
       env:
         ANTHROPIC_API_KEY: "sk-ant-test-placeholder"
         SIMULATION_SEED: "42"
         PYTHONPATH: ${{ github.workspace }}
-      run: python -m pytest tests/ -q --tb=short
+      run: python -m pytest tests/ -v --tb=long 2>&1
 
     - name: Validate config
       run: python -c "import yaml; d=yaml.safe_load(open('experiments.yaml')); e=d.get('experiments',d); print('Experiments:', len(e))"
