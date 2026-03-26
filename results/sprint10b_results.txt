@@ -1,0 +1,40 @@
+═══════════════════════════════════════════════════════════════
+SPRINT 10B — Ablation Prompt Complexity
+Fecha: 2026-03-26  |  Modelo: Haiku-4.5  |  n=5 por condición
+═══════════════════════════════════════════════════════════════
+
+DISEÑO:
+  - ablation_prompt_minimal_llm: prompt 1 línea ("decide: PROLIFERATE/MIGRATE/SIGNAL/QUIESCE/DIE")
+  - ablation_prompt_full_llm:    prompt completo con contexto biológico (control)
+
+RESULTADOS RAW:
+  MINIMAL R1 (152639): tumor=60, NK_collapse=NUNCA, CD8_collapse=NUNCA
+  MINIMAL R2 (153840): tumor=62, NK_collapse=NUNCA, CD8_collapse=NUNCA
+  MINIMAL R3 (155130): tumor=64, NK_collapse=NUNCA, CD8_collapse=NUNCA
+  MINIMAL R4 (160511): tumor=60, NK_collapse=NUNCA, CD8_collapse=NUNCA
+  MINIMAL R5 (161758): tumor=67, NK_collapse=NUNCA, CD8_collapse=NUNCA
+
+  FULL R1 (163121): tumor=72, NK_collapse=c31, CD8_collapse=c33
+  FULL R2 (163714): tumor=69, NK_collapse=c34, CD8_collapse=NUNCA
+  FULL R3 (164246): tumor=61, NK_collapse=c31, CD8_collapse=NUNCA
+  FULL R4 (164849): tumor=72, NK_collapse=c30, CD8_collapse=c33
+  FULL R5 (165434): tumor=72, NK_collapse=c31, CD8_collapse=c34
+
+ESTADÍSTICAS:
+  Tumor final:
+    MINIMAL: 62.6 ± 3.0
+    FULL:    69.2 ± 4.8
+    Mann-Whitney U=3, z=-1.98, p≈0.095 (NS, tendencia)
+
+  NK collapse (Fisher exact):
+    MINIMAL: 0/5  FULL: 5/5  → p=0.008 **
+
+  CD8+ collapse (Fisher exact):
+    MINIMAL: 0/5  FULL: 3/5  → p=0.167 (NS)
+
+CONCLUSIÓN:
+  Complejidad del prompt SÍ importa para la emergencia del patrón NK→CD8+.
+  Con prompt mínimo el sistema degrada a rule engine por batch parse failures.
+  Los fenómenos emergentes requieren razonamiento contextual suficiente.
+  FORTALECE la hipótesis central del framework.
+═══════════════════════════════════════════════════════════════
