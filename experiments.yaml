@@ -504,7 +504,7 @@ experiments:
     n_dendritic_cells: 3
     opus_analysis_interval: 25
     llm_provider: anthropic
-    agent_model: "claude-sonnet-4-5-20251101"
+    agent_model: "claude-sonnet-4-5-20250929"
     simulation_seed: 42
     description: "Sprint 7A — Sonnet agentes (bridge config, 35c, seed=42, ~$8/run)"
 
