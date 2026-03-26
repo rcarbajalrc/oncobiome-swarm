@@ -1,0 +1,116 @@
+
+  # ── Sprint 6: zAvatar TCGA-PAAD ──────────────────────────────────────────
+  #
+  # Objetivo: personalizar seed biológico con datos reales TCGA-PAAD (177 muestras)
+  # Tres perfiles derivados de expresión génica TME (z-scores):
+  #   - MEDIAN: paciente PDAC típico (cambios mínimos vs base calibrado)
+  #   - COLD:   TME inmunosupresor (IFNG p10, VEGFA p90, IL6 p90)
+  #   - HOT:    TME inmuno-activo  (IFNG p90, VEGFA p10, IL6 p10)
+  #
+  # Traducción génica:
+  #   CD8A↑→immune_kill↑, NCAM1↑→nk_kill↑, IFNG↑→dc_threshold↓
+  #   VEGFA↑→cytokine_decay↓, IL6↑→m2_threshold↓, CD274↑→exhaustion↓
+  #
+  # Hipótesis Sprint 6:
+  #   H6a: COLD_TUMOR muestra colapso NK+CD8+ más rápido que MEDIAN (Δ>5 ciclos)
+  #   H6b: HOT_TUMOR muestra retraso o control parcial del tumor vs MEDIAN
+  #   H6c: patrón NK→CD8+ persiste en los 3 perfiles (topología causal robusta)
+  #
+  # Coste estimado: ~$0.70/run × 3 perfiles × 3 runs = ~$6.30
+
+  zavatar_median_llm:
+    max_agents: 80
+    total_cycles: 52
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 25
+    llm_provider: anthropic
+    # Parámetros derivados de TCGA-PAAD MEDIAN (177 muestras)
+    immune_kill_rate: 0.1419
+    nk_kill_rate: 0.095
+    nk_il6_suppression_threshold: 0.0409
+    dc_maturation_ifng_threshold: 0.0549
+    m2_polarisation_il6_threshold: 0.0609
+    cytokine_decay: 0.0403
+    immune_exhaustion_age: 14
+    dc_maturation_cycles: 3
+    description: "Sprint 6 zAvatar MEDIAN — perfil TCGA-PAAD mediana (177 pacientes, ~$0.70/run)"
+
+  zavatar_cold_llm:
+    max_agents: 80
+    total_cycles: 52
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 25
+    llm_provider: anthropic
+    # Parámetros derivados de TCGA-PAAD COLD (IFNG p10, VEGFA p90, IL6 p90)
+    immune_kill_rate: 0.0953
+    nk_kill_rate: 0.0666
+    nk_il6_suppression_threshold: 0.0287
+    dc_maturation_ifng_threshold: 0.0663
+    m2_polarisation_il6_threshold: 0.0441
+    cytokine_decay: 0.0301
+    immune_exhaustion_age: 11
+    dc_maturation_cycles: 3
+    description: "Sprint 6 zAvatar COLD — TME inmunosupresor TCGA-PAAD (~$0.70/run)"
+
+  zavatar_hot_llm:
+    max_agents: 80
+    total_cycles: 52
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 25
+    llm_provider: anthropic
+    # Parámetros derivados de TCGA-PAAD HOT (IFNG p90, VEGFA p10, IL6 p10)
+    immune_kill_rate: 0.1982
+    nk_kill_rate: 0.1305
+    nk_il6_suppression_threshold: 0.0498
+    dc_maturation_ifng_threshold: 0.0373
+    m2_polarisation_il6_threshold: 0.0744
+    cytokine_decay: 0.0494
+    immune_exhaustion_age: 19
+    dc_maturation_cycles: 2
+    description: "Sprint 6 zAvatar HOT — TME inmuno-activo TCGA-PAAD (~$0.70/run)"
+
+  # Controles rule engine para Sprint 6 ($0)
+  zavatar_cold_rule:
+    max_agents: 80
+    total_cycles: 52
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 999
+    llm_provider: rule_engine
+    immune_kill_rate: 0.0953
+    nk_kill_rate: 0.0666
+    description: "Sprint 6 zAvatar COLD rule engine — sanity check ($0)"
+
+  zavatar_hot_rule:
+    max_agents: 80
+    total_cycles: 52
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 999
+    llm_provider: rule_engine
+    immune_kill_rate: 0.1982
+    nk_kill_rate: 0.1305
+    description: "Sprint 6 zAvatar HOT rule engine — sanity check ($0)"

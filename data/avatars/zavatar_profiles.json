@@ -1,0 +1,114 @@
+{
+  "TCGA_PAAD_MEDIAN": {
+    "patient_id": "TCGA_PAAD_MEDIAN",
+    "source": "TCGA-PAAD",
+    "gene_zscores": {
+      "VEGFA": -0.0355,
+      "CD274": 0.0593,
+      "IFNG": -0.4927,
+      "HAVCR2": 0.227,
+      "IL6": -0.1148,
+      "ITGAE": -0.0169,
+      "KRAS": 0.0416,
+      "NCAM1": -0.0507,
+      "PDCD1": 0.014,
+      "CD8A": 0.0623
+    },
+    "params": {
+      "immune_kill_rate": 0.1419,
+      "nk_kill_rate": 0.095,
+      "nk_il6_suppression_threshold": 0.0409,
+      "dc_maturation_ifng_threshold": 0.0549,
+      "m2_polarisation_il6_threshold": 0.0609,
+      "cytokine_decay": 0.0403,
+      "tumor_initial_energy": 0.75,
+      "immune_exhaustion_age": 14,
+      "dc_maturation_cycles": 3
+    },
+    "delta_from_base": {
+      "immune_kill_rate": -5.4,
+      "nk_kill_rate": -5.0,
+      "nk_il6_suppression_threshold": 2.2,
+      "dc_maturation_ifng_threshold": 9.8,
+      "m2_polarisation_il6_threshold": 1.5,
+      "cytokine_decay": 0.8,
+      "tumor_initial_energy": 0.0,
+      "immune_exhaustion_age": -6.7,
+      "dc_maturation_cycles": 0.0
+    }
+  },
+  "COLD_TUMOR_PROFILE": {
+    "patient_id": "COLD_TUMOR_PROFILE",
+    "source": "TCGA-PAAD",
+    "gene_zscores": {
+      "IFNG": -1.6337,
+      "VEGFA": 1.2324400000000004,
+      "IL6": 1.41238,
+      "CD8A": -1.28248,
+      "NCAM1": -1.1898799999999998,
+      "ITGAE": -1.30874,
+      "CD274": 1.30968,
+      "HAVCR2": 0.9964000000000002,
+      "KRAS": 0.6042
+    },
+    "params": {
+      "immune_kill_rate": 0.0953,
+      "nk_kill_rate": 0.0666,
+      "nk_il6_suppression_threshold": 0.0287,
+      "dc_maturation_ifng_threshold": 0.0663,
+      "m2_polarisation_il6_threshold": 0.0441,
+      "cytokine_decay": 0.0301,
+      "tumor_initial_energy": 0.75,
+      "immune_exhaustion_age": 11,
+      "dc_maturation_cycles": 3
+    },
+    "delta_from_base": {
+      "immune_kill_rate": -36.5,
+      "nk_kill_rate": -33.4,
+      "nk_il6_suppression_threshold": -28.3,
+      "dc_maturation_ifng_threshold": 32.6,
+      "m2_polarisation_il6_threshold": -26.5,
+      "cytokine_decay": -24.8,
+      "tumor_initial_energy": 0.0,
+      "immune_exhaustion_age": -26.7,
+      "dc_maturation_cycles": 0.0
+    }
+  },
+  "HOT_TUMOR_PROFILE": {
+    "patient_id": "HOT_TUMOR_PROFILE",
+    "source": "TCGA-PAAD",
+    "gene_zscores": {
+      "IFNG": 1.2695200000000002,
+      "VEGFA": -1.1733,
+      "IL6": -1.22238,
+      "CD8A": 1.3036200000000004,
+      "NCAM1": 1.19666,
+      "ITGAE": 1.2798,
+      "CD274": -1.50716,
+      "HAVCR2": -1.2654199999999998,
+      "KRAS": 0.6042
+    },
+    "params": {
+      "immune_kill_rate": 0.1982,
+      "nk_kill_rate": 0.1305,
+      "nk_il6_suppression_threshold": 0.0498,
+      "dc_maturation_ifng_threshold": 0.0373,
+      "m2_polarisation_il6_threshold": 0.0744,
+      "cytokine_decay": 0.0494,
+      "tumor_initial_energy": 0.75,
+      "immune_exhaustion_age": 19,
+      "dc_maturation_cycles": 2
+    },
+    "delta_from_base": {
+      "immune_kill_rate": 32.1,
+      "nk_kill_rate": 30.5,
+      "nk_il6_suppression_threshold": 24.5,
+      "dc_maturation_ifng_threshold": -25.4,
+      "m2_polarisation_il6_threshold": 24.0,
+      "cytokine_decay": 23.5,
+      "tumor_initial_energy": 0.0,
+      "immune_exhaustion_age": 26.7,
+      "dc_maturation_cycles": -33.3
+    }
+  }
+}

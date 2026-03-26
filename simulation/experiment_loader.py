@@ -69,6 +69,8 @@ def list_experiments() -> None:
             tags.append("NO-MEM")
         if params.get("prompt_mode") == "abstract":
             tags.append("ABSTRACT")
+        if any(k in params for k in ["immune_kill_rate", "nk_kill_rate"]):
+            tags.append("zAVATAR")
         tag_str = f" [{', '.join(tags)}]" if tags else ""
         print(f"  {name:<40} {desc}{tag_str}")
     print()
@@ -90,8 +92,18 @@ def apply_experiment_to_env(params: dict) -> None:
         "n_dendritic_cells":      "N_DENDRITIC_CELLS",
         "llm_concurrency":        "LLM_CONCURRENCY",
         "haiku_max_tokens":       "HAIKU_MAX_TOKENS",
-        "memory_mode":            "MEMORY_MODE",    # Sprint 5A: ablation memoria
-        "prompt_mode":            "PROMPT_MODE",    # Sprint 5B: ablation semántica
+        "memory_mode":            "MEMORY_MODE",
+        "prompt_mode":            "PROMPT_MODE",
+        # Sprint 6: zAvatar — parámetros biológicos derivados de TCGA-PAAD
+        "immune_kill_rate":              "IMMUNE_KILL_RATE",
+        "nk_kill_rate":                  "NK_KILL_RATE",
+        "nk_il6_suppression_threshold":  "NK_IL6_SUPPRESSION_THRESHOLD",
+        "dc_maturation_ifng_threshold":  "DC_MATURATION_IFNG_THRESHOLD",
+        "m2_polarisation_il6_threshold": "M2_POLARISATION_IL6_THRESHOLD",
+        "cytokine_decay":                "CYTOKINE_DECAY",
+        "tumor_initial_energy":          "TUMOR_INITIAL_ENERGY",
+        "immune_exhaustion_age":         "IMMUNE_EXHAUSTION_AGE",
+        "dc_maturation_cycles":          "DC_MATURATION_CYCLES",
     }
 
     for param_key, env_key in mapping.items():
