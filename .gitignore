@@ -71,6 +71,9 @@ Thumbs.db
 # Cubre raíz Y subdirectorios
 **/_*.py
 
+# Excepción: __init__.py son esenciales para los paquetes Python
+!**/__init__.py
+
 # Excepción: scripts de mantenimiento legítimos
 !scripts/_audit_pregithub.py
 !scripts/_pregithub_cleanup.py
