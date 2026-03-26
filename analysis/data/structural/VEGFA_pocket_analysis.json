@@ -1,0 +1,82 @@
+{
+  "target_key": "VEGFA",
+  "uniprot_acc": "P15692",
+  "gene": "VEGFA",
+  "full_name": "Vascular endothelial growth factor A",
+  "mutation": null,
+  "length_aa": 232,
+  "alphafold_plddt": 0.0,
+  "alphafold_version": "v4 (2025_03)",
+  "pdb_available": false,
+  "binding_pocket": {
+    "name": "VEGFR2 binding interface",
+    "residues": [
+      63,
+      64,
+      67,
+      79,
+      82,
+      83,
+      86,
+      103,
+      104,
+      105
+    ],
+    "region": "Loop 3 + Helix alpha1 (VEGFR2 contact surface)",
+    "critical_epitope": [
+      63,
+      64,
+      67
+    ],
+    "inhibitor_contacts": {
+      "bevacizumab": [
+        63,
+        64,
+        67,
+        79,
+        82,
+        86
+      ],
+      "ranibizumab": [
+        63,
+        64,
+        67,
+        82,
+        83
+      ]
+    },
+    "druggability_score": 0.92,
+    "geometry": {
+      "n_pocket_residues": 10,
+      "pocket_volume_A3": 322.0,
+      "avg_hydrophobicity_kyte_doolittle": 0.5,
+      "druggability_score": 0.92,
+      "solvent_accessibility_estimate": 0.056,
+      "median_inhibitor_contacts": 5.5,
+      "pocket_fraction_of_protein": 0.0431,
+      "estimated_binding_energy_kcal_mol": 0.69
+    }
+  },
+  "inhibition_kinetics": {
+    "best_known_inhibitor": "ranibizumab",
+    "best_kd_M": 4.6e-10,
+    "best_kd_nM": 0.46,
+    "estimated_ic50_M": 9.2e-10,
+    "receptor_occupancy_at_1uM": 0.9995,
+    "max_theoretical_inhibition": 0.9496,
+    "hill_coefficient": 1.0,
+    "onco_inhibition_parameter": 0.8496
+  },
+  "clinical_inhibitors": {
+    "bevacizumab": 1e-09,
+    "ranibizumab": 4.6e-10
+  },
+  "clinical_status": "Bevacizumab FDA-approved; multiple VEGF inhibitors clinical",
+  "onco_parameter_mapping": {
+    "parameter": "cytokine_decay_rate",
+    "effect": "increase",
+    "delta": 0.33984000000000003,
+    "biological_basis": "Anti-VEGF reduces tumor vasculature and cytokine signaling",
+    "reference": "Jain RK 2014 Nature Medicine"
+  }
+}

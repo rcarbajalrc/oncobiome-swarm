@@ -1,0 +1,86 @@
+{
+  "target_key": "IL6R",
+  "uniprot_acc": "P08887",
+  "gene": "IL6R",
+  "full_name": "Interleukin-6 receptor subunit alpha",
+  "mutation": null,
+  "length_aa": 468,
+  "alphafold_plddt": 0.0,
+  "alphafold_version": "v4 (2025_03)",
+  "pdb_available": false,
+  "binding_pocket": {
+    "name": "IL-6 binding domain (D2-D3 interface)",
+    "residues": [
+      47,
+      51,
+      52,
+      55,
+      184,
+      185,
+      188,
+      190,
+      227,
+      231
+    ],
+    "region": "Immunoglobulin-like D2 domain",
+    "critical_epitope": [
+      47,
+      51,
+      184,
+      188,
+      227
+    ],
+    "inhibitor_contacts": {
+      "tocilizumab": [
+        47,
+        51,
+        52,
+        55,
+        184,
+        185,
+        190,
+        227
+      ],
+      "sarilumab": [
+        47,
+        51,
+        184,
+        188,
+        231
+      ]
+    },
+    "druggability_score": 0.81,
+    "geometry": {
+      "n_pocket_residues": 10,
+      "pocket_volume_A3": 283.5,
+      "avg_hydrophobicity_kyte_doolittle": 0.5,
+      "druggability_score": 0.81,
+      "solvent_accessibility_estimate": 0.133,
+      "median_inhibitor_contacts": 6.5,
+      "pocket_fraction_of_protein": 0.0214,
+      "estimated_binding_energy_kcal_mol": 1.75
+    }
+  },
+  "inhibition_kinetics": {
+    "best_known_inhibitor": "sarilumab",
+    "best_kd_M": 2.1e-10,
+    "best_kd_nM": 0.21,
+    "estimated_ic50_M": 4.2e-10,
+    "receptor_occupancy_at_1uM": 0.9998,
+    "max_theoretical_inhibition": 0.9498,
+    "hill_coefficient": 1.0,
+    "onco_inhibition_parameter": 0.8498
+  },
+  "clinical_inhibitors": {
+    "tocilizumab": 2.2e-09,
+    "sarilumab": 2.1e-10
+  },
+  "clinical_status": "Tocilizumab, sarilumab FDA-approved (RA, CRS)",
+  "onco_parameter_mapping": {
+    "parameter": "dc_maturation_cycles",
+    "effect": "decrease",
+    "delta": -1.2747,
+    "biological_basis": "IL-6R blockade reduces tolerogenic DC programming",
+    "reference": "Immunity 2023 PMID 37625410"
+  }
+}

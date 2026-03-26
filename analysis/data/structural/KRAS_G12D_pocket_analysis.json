@@ -1,0 +1,126 @@
+{
+  "target_key": "KRAS_G12D",
+  "uniprot_acc": "P01116",
+  "gene": "KRAS",
+  "full_name": "GTPase KRas isoform 2B",
+  "mutation": "G12D",
+  "length_aa": 189,
+  "alphafold_plddt": 0.0,
+  "alphafold_version": "v4 (2025_03)",
+  "pdb_available": false,
+  "binding_pocket": {
+    "name": "Switch-II Pocket (SII-P)",
+    "residues": [
+      12,
+      13,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      68,
+      71,
+      72
+    ],
+    "region": "Switch-II (residues 60-76)",
+    "p_loop": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "switch_I": [
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38
+    ],
+    "switch_II": [
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76
+    ],
+    "critical_mutation_residue": 12,
+    "inhibitor_contacts": {
+      "MRTX1133": [
+        12,
+        61,
+        65,
+        68,
+        71,
+        72
+      ],
+      "RMC-9805": [
+        12,
+        60,
+        61,
+        62,
+        65
+      ],
+      "TH-Z835": [
+        12,
+        61,
+        65,
+        68
+      ]
+    },
+    "druggability_score": 0.85,
+    "geometry": {
+      "n_pocket_residues": 11,
+      "pocket_volume_A3": 327.2,
+      "avg_hydrophobicity_kyte_doolittle": 0.5,
+      "druggability_score": 0.85,
+      "solvent_accessibility_estimate": 0.105,
+      "median_inhibitor_contacts": 5.0,
+      "pocket_fraction_of_protein": 0.0582,
+      "estimated_binding_energy_kcal_mol": 1.35
+    }
+  },
+  "inhibition_kinetics": {
+    "best_known_inhibitor": "MRTX1133",
+    "best_kd_M": 7e-10,
+    "best_kd_nM": 0.7,
+    "estimated_ic50_M": 1.4e-09,
+    "receptor_occupancy_at_1uM": 0.9993,
+    "max_theoretical_inhibition": 0.9493,
+    "hill_coefficient": 1.0,
+    "onco_inhibition_parameter": 0.8494
+  },
+  "clinical_inhibitors": {
+    "MRTX1133": 7e-10,
+    "RMC-9805": 1.2e-09,
+    "TH-Z835": 8.5e-09
+  },
+  "clinical_status": "MRTX1133 Phase I/II (NCT05737706); RMC-9805 Phase I",
+  "onco_parameter_mapping": {
+    "parameter": "tumor_proliferation_rate",
+    "effect": "reduction",
+    "delta": -0.5521100000000001,
+    "biological_basis": "KRAS G12D GDP inhibition reduces MAPK/ERK signaling cascade",
+    "reference": "Kumarasamy et al. Cancer Res 2024"
+  }
+}

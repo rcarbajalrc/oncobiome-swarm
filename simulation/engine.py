@@ -32,6 +32,7 @@ from config import get_config
 from llm.client import LLMClient
 from llm.opus_analyzer import OpusAnalyzer
 from llm.prompts import build_system_prompt, build_user_prompt
+from llm.prompts_abstract import build_abstract_system_prompt, build_abstract_user_prompt
 from llm.rule_engine import rule_engine_decide
 from models.agent_state import AgentAction, AgentDecision, AgentType
 from simulation.decision_logger import get_decision_logger, reset_logger
@@ -267,7 +268,18 @@ class SimulationEngine:
             if not agent_ids:
                 continue
 
-            system_prompt = build_system_prompt(agent_type)
+            _prompt_mode = os.environ.get("PROMPT_MODE", "full").lower()
+            if _prompt_mode == "abstract":
+                system_prompt = build_abstract_system_prompt(agent_type)
+            elif _prompt_mode == "minimal":
+                system_prompt = (
+                    "Autonomous agent. Output ONLY one JSON line. "
+                    "Format: {action:X, reasoning:Y, confidence:0.9}. "
+                    "Actions available: PROLIFERATE MIGRATE SIGNAL QUIESCE DIE. "
+                    "Choose the most rational action given the context."
+                )
+            else:
+                system_prompt = build_system_prompt(agent_type)
             user_prompts = [build_user_prompt(contexts[aid]) for aid in agent_ids]
 
             logger.debug("Batch %s: %d agentes → 1 llamada LLM", agent_type.value, len(agent_ids))

@@ -1,0 +1,37 @@
+{
+  "KRAS_G12D": {
+    "parameter": "tumor_proliferation_rate",
+    "effect": "reduction",
+    "delta_at_best_inhibitor": -0.5521100000000001,
+    "best_inhibitor_kd_nM": 0.7,
+    "clinical_status": "MRTX1133 Phase I/II (NCT05737706); RMC-9805 Phase I"
+  },
+  "VEGFA": {
+    "parameter": "cytokine_decay_rate",
+    "effect": "increase",
+    "delta_at_best_inhibitor": 0.33984000000000003,
+    "best_inhibitor_kd_nM": 0.46,
+    "clinical_status": "Bevacizumab FDA-approved; multiple VEGF inhibitors clinical"
+  },
+  "IL6": {
+    "parameter": "m2_polarisation_threshold",
+    "effect": "increase",
+    "delta_at_best_inhibitor": 0.297465,
+    "best_inhibitor_kd_nM": 0.1,
+    "clinical_status": "Tocilizumab FDA-approved (RA, CRS); siltuximab approved (MCD)"
+  },
+  "PDL1": {
+    "parameter": "immune_exhaustion_age",
+    "effect": "increase",
+    "delta_at_best_inhibitor": 6.7992,
+    "best_inhibitor_kd_nM": 0.068,
+    "clinical_status": "Atezolizumab, durvalumab, avelumab FDA-approved"
+  },
+  "IL6R": {
+    "parameter": "dc_maturation_cycles",
+    "effect": "decrease",
+    "delta_at_best_inhibitor": -1.2747,
+    "best_inhibitor_kd_nM": 0.21,
+    "clinical_status": "Tocilizumab, sarilumab FDA-approved (RA, CRS)"
+  }
+}

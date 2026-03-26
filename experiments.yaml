@@ -536,3 +536,198 @@ experiments:
     llm_provider: anthropic
     agent_model: "claude-haiku-4-5-20251001"
     description: "Sprint 7A — Haiku sin seed (control estocástico, ~$0.45/run)"
+# OncoBiome Swarm — Plan de Rigor Científico Pre-Publicación
+# Fecha: 2026-03-26
+# Objetivo: cerrar todos los gaps antes de envío a revista
+
+# ══════════════════════════════════════════════════════════════════════
+# SPRINT 10A — Sonnet n=10 (CRÍTICO, ~$70)
+# Motivo: n=3 insuficiente para Fisher exacto. Revisor lo rechazará.
+# Target: Fisher exacto balanceado Haiku n=10 vs Sonnet n=10
+# Sin esto el hallazgo central del paper es estadísticamente débil.
+# ══════════════════════════════════════════════════════════════════════
+sprint10a_sonnet_r4:
+  max_agents: 80
+  total_cycles: 35
+  n_tumor_cells: 12
+  n_immune_cells: 8
+  n_macrophages: 3
+  n_phytochemicals: 2
+  n_nk_cells: 4
+  n_dendritic_cells: 3
+  opus_analysis_interval: 35
+  llm_provider: anthropic
+  agent_model: "claude-sonnet-4-5-20250929"
+  description: "Sprint 10A — Sonnet R4 (n=10 target, sin seed, ~$8/run)"
+
+sprint10a_sonnet_r5:
+  max_agents: 80
+  total_cycles: 35
+  n_tumor_cells: 12
+  n_immune_cells: 8
+  n_macrophages: 3
+  n_phytochemicals: 2
+  n_nk_cells: 4
+  n_dendritic_cells: 3
+  opus_analysis_interval: 35
+  llm_provider: anthropic
+  agent_model: "claude-sonnet-4-5-20250929"
+  description: "Sprint 10A — Sonnet R5"
+
+sprint10a_sonnet_r6:
+  max_agents: 80
+  total_cycles: 35
+  n_tumor_cells: 12
+  n_immune_cells: 8
+  n_macrophages: 3
+  n_phytochemicals: 2
+  n_nk_cells: 4
+  n_dendritic_cells: 3
+  opus_analysis_interval: 35
+  llm_provider: anthropic
+  agent_model: "claude-sonnet-4-5-20250929"
+  description: "Sprint 10A — Sonnet R6"
+
+sprint10a_sonnet_r7:
+  max_agents: 80
+  total_cycles: 35
+  n_tumor_cells: 12
+  n_immune_cells: 8
+  n_macrophages: 3
+  n_phytochemicals: 2
+  n_nk_cells: 4
+  n_dendritic_cells: 3
+  opus_analysis_interval: 35
+  llm_provider: anthropic
+  agent_model: "claude-sonnet-4-5-20250929"
+  description: "Sprint 10A — Sonnet R7"
+
+sprint10a_sonnet_r8:
+  max_agents: 80
+  total_cycles: 35
+  n_tumor_cells: 12
+  n_immune_cells: 8
+  n_macrophages: 3
+  n_phytochemicals: 2
+  n_nk_cells: 4
+  n_dendritic_cells: 3
+  opus_analysis_interval: 35
+  llm_provider: anthropic
+  agent_model: "claude-sonnet-4-5-20250929"
+  description: "Sprint 10A — Sonnet R8"
+
+sprint10a_sonnet_r9:
+  max_agents: 80
+  total_cycles: 35
+  n_tumor_cells: 12
+  n_immune_cells: 8
+  n_macrophages: 3
+  n_phytochemicals: 2
+  n_nk_cells: 4
+  n_dendritic_cells: 3
+  opus_analysis_interval: 35
+  llm_provider: anthropic
+  agent_model: "claude-sonnet-4-5-20250929"
+  description: "Sprint 10A — Sonnet R9"
+
+sprint10a_sonnet_r10:
+  max_agents: 80
+  total_cycles: 35
+  n_tumor_cells: 12
+  n_immune_cells: 8
+  n_macrophages: 3
+  n_phytochemicals: 2
+  n_nk_cells: 4
+  n_dendritic_cells: 3
+  opus_analysis_interval: 35
+  llm_provider: anthropic
+  agent_model: "claude-sonnet-4-5-20250929"
+  description: "Sprint 10A — Sonnet R10"
+
+# ══════════════════════════════════════════════════════════════════════
+# SPRINT 10B — Ablación prompt mínimo vs completo ($0 o ~$5)
+# Motivo: GAP auditoria — no podemos descartar que el patrón venga
+# del prompt específico, no de la topología causal.
+# Diseño: prompt_minimal (1 línea: "decide: PROLIFERATE/MIGRATE/SIGNAL/QUIESCE/DIE")
+# vs prompt_completo (actual con contexto biológico)
+# ══════════════════════════════════════════════════════════════════════
+ablation_prompt_minimal_llm:
+  max_agents: 80
+  total_cycles: 35
+  n_tumor_cells: 12
+  n_immune_cells: 8
+  n_macrophages: 3
+  n_phytochemicals: 2
+  n_nk_cells: 4
+  n_dendritic_cells: 3
+  opus_analysis_interval: 35
+  llm_provider: anthropic
+  agent_model: "claude-haiku-4-5-20251001"
+  prompt_mode: "minimal"
+  description: "Sprint 10B — Prompt mínimo (1 línea), Haiku, n=5 (~$0.45/run)"
+
+ablation_prompt_full_llm:
+  max_agents: 80
+  total_cycles: 35
+  n_tumor_cells: 12
+  n_immune_cells: 8
+  n_macrophages: 3
+  n_phytochemicals: 2
+  n_nk_cells: 4
+  n_dendritic_cells: 3
+  opus_analysis_interval: 35
+  llm_provider: anthropic
+  agent_model: "claude-haiku-4-5-20251001"
+  prompt_mode: "full"
+  description: "Sprint 10B — Prompt completo (control), Haiku, n=5 (~$0.45/run)"
+
+# ══════════════════════════════════════════════════════════════════════
+# SPRINT 11A — zAvatar n=10 HOT vs COLD (~$9)
+# Motivo: n=3 da p=0.099 NS. Con n=10 la potencia sube a ~0.75.
+# Target: Mann-Whitney formal con poder estadístico adecuado.
+# ══════════════════════════════════════════════════════════════════════
+zavatar_cold_35c_r4:
+  max_agents: 80
+  total_cycles: 35
+  n_tumor_cells: 12
+  n_immune_cells: 8
+  n_macrophages: 3
+  n_phytochemicals: 2
+  n_nk_cells: 4
+  n_dendritic_cells: 3
+  opus_analysis_interval: 35
+  llm_provider: anthropic
+  agent_model: "claude-haiku-4-5-20251001"
+  description: "Sprint 11A — COLD R4 (target n=10)"
+
+zavatar_hot_35c_r4:
+  max_agents: 80
+  total_cycles: 35
+  n_tumor_cells: 12
+  n_immune_cells: 8
+  n_macrophages: 3
+  n_phytochemicals: 2
+  n_nk_cells: 4
+  n_dendritic_cells: 3
+  opus_analysis_interval: 35
+  llm_provider: anthropic
+  agent_model: "claude-haiku-4-5-20251001"
+  description: "Sprint 11A — HOT R4 (target n=10)"
+
+# ══════════════════════════════════════════════════════════════════════
+# SPRINT 11B — Rule engine n=10 como control $0
+# Motivo: necesitamos baseline determinista con n=10 para comparar
+# formalmente LLM vs reglas con el mismo poder estadístico.
+# ══════════════════════════════════════════════════════════════════════
+bridge_rule_n10:
+  max_agents: 80
+  total_cycles: 35
+  n_tumor_cells: 12
+  n_immune_cells: 8
+  n_macrophages: 3
+  n_phytochemicals: 2
+  n_nk_cells: 4
+  n_dendritic_cells: 3
+  opus_analysis_interval: 35
+  llm_provider: rule_engine
+  description: "Sprint 11B — Rule engine n=10 control ($0)"

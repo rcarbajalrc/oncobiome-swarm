@@ -1,0 +1,82 @@
+{
+  "target_key": "IL6",
+  "uniprot_acc": "P05231",
+  "gene": "IL6",
+  "full_name": "Interleukin-6",
+  "mutation": null,
+  "length_aa": 212,
+  "alphafold_plddt": 0.0,
+  "alphafold_version": "v4 (2025_03)",
+  "pdb_available": false,
+  "binding_pocket": {
+    "name": "IL-6R binding site (Site I)",
+    "residues": [
+      58,
+      60,
+      63,
+      64,
+      67,
+      68,
+      164,
+      168,
+      170,
+      171
+    ],
+    "region": "Helices A-D interface",
+    "critical_epitope": [
+      164,
+      168,
+      170,
+      171
+    ],
+    "inhibitor_contacts": {
+      "siltuximab": [
+        58,
+        60,
+        64,
+        164,
+        168,
+        171
+      ],
+      "tocilizumab": [
+        60,
+        63,
+        67,
+        68
+      ]
+    },
+    "druggability_score": 0.78,
+    "geometry": {
+      "n_pocket_residues": 10,
+      "pocket_volume_A3": 273.0,
+      "avg_hydrophobicity_kyte_doolittle": 0.5,
+      "druggability_score": 0.78,
+      "solvent_accessibility_estimate": 0.154,
+      "median_inhibitor_contacts": 5.0,
+      "pocket_fraction_of_protein": 0.0472,
+      "estimated_binding_energy_kcal_mol": 2.06
+    }
+  },
+  "inhibition_kinetics": {
+    "best_known_inhibitor": "siltuximab",
+    "best_kd_M": 1e-10,
+    "best_kd_nM": 0.1,
+    "estimated_ic50_M": 2e-10,
+    "receptor_occupancy_at_1uM": 0.9999,
+    "max_theoretical_inhibition": 0.9499,
+    "hill_coefficient": 1.0,
+    "onco_inhibition_parameter": 0.8499
+  },
+  "clinical_inhibitors": {
+    "siltuximab": 1e-10,
+    "tocilizumab_IL6R": 4e-10
+  },
+  "clinical_status": "Tocilizumab FDA-approved (RA, CRS); siltuximab approved (MCD)",
+  "onco_parameter_mapping": {
+    "parameter": "m2_polarisation_threshold",
+    "effect": "increase",
+    "delta": 0.297465,
+    "biological_basis": "IL-6 blockade prevents JAK-STAT3 M2 macrophage polarization",
+    "reference": "Laimer et al. Frontiers Immunol 2024"
+  }
+}
