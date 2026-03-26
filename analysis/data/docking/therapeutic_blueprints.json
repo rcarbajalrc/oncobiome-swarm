@@ -1,0 +1,142 @@
+[
+  {
+    "rank_type": "triple",
+    "combination": "RMC-9805 + siltuximab + sarilumab",
+    "n_agents": 3,
+    "targets": [
+      "KRAS_G12D",
+      "IL6",
+      "IL6R"
+    ],
+    "therapeutic_index_combined": 31.439,
+    "synergy_class": "Additive",
+    "final_score": 20.874,
+    "rank": 1
+  },
+  {
+    "rank_type": "triple",
+    "combination": "RMC-9805 + ramucirumab + siltuximab",
+    "n_agents": 3,
+    "targets": [
+      "KRAS_G12D",
+      "VEGFA",
+      "IL6"
+    ],
+    "therapeutic_index_combined": 30.305,
+    "synergy_class": "Additive",
+    "final_score": 20.1211,
+    "rank": 2
+  },
+  {
+    "rank_type": "triple",
+    "combination": "RMC-9805 + siltuximab + durvalumab",
+    "n_agents": 3,
+    "targets": [
+      "KRAS_G12D",
+      "IL6",
+      "PDL1"
+    ],
+    "therapeutic_index_combined": 30.195,
+    "synergy_class": "Synergy",
+    "final_score": 20.0481,
+    "rank": 3
+  },
+  {
+    "rank_type": "triple",
+    "combination": "RMC-9805 + ramucirumab + sarilumab",
+    "n_agents": 3,
+    "targets": [
+      "KRAS_G12D",
+      "VEGFA",
+      "IL6R"
+    ],
+    "therapeutic_index_combined": 29.559,
+    "synergy_class": "Additive",
+    "final_score": 19.6258,
+    "rank": 4
+  },
+  {
+    "rank_type": "triple",
+    "combination": "RMC-9805 + sarilumab + durvalumab",
+    "n_agents": 3,
+    "targets": [
+      "KRAS_G12D",
+      "IL6R",
+      "PDL1"
+    ],
+    "therapeutic_index_combined": 29.449,
+    "synergy_class": "Synergy",
+    "final_score": 19.5527,
+    "rank": 5
+  },
+  {
+    "rank_type": "triple",
+    "combination": "ramucirumab + siltuximab + sarilumab",
+    "n_agents": 3,
+    "targets": [
+      "VEGFA",
+      "IL6",
+      "IL6R"
+    ],
+    "therapeutic_index_combined": 28.436,
+    "synergy_class": "Additive",
+    "final_score": 18.8802,
+    "rank": 6
+  },
+  {
+    "rank_type": "triple",
+    "combination": "siltuximab + sarilumab + durvalumab",
+    "n_agents": 3,
+    "targets": [
+      "IL6",
+      "IL6R",
+      "PDL1"
+    ],
+    "therapeutic_index_combined": 28.326,
+    "synergy_class": "Synergy",
+    "final_score": 18.8071,
+    "rank": 7
+  },
+  {
+    "rank_type": "triple",
+    "combination": "RMC-9805 + ramucirumab + durvalumab",
+    "n_agents": 3,
+    "targets": [
+      "KRAS_G12D",
+      "VEGFA",
+      "PDL1"
+    ],
+    "therapeutic_index_combined": 28.315,
+    "synergy_class": "Synergy",
+    "final_score": 18.7998,
+    "rank": 8
+  },
+  {
+    "rank_type": "triple",
+    "combination": "ramucirumab + siltuximab + durvalumab",
+    "n_agents": 3,
+    "targets": [
+      "VEGFA",
+      "IL6",
+      "PDL1"
+    ],
+    "therapeutic_index_combined": 27.192,
+    "synergy_class": "Synergy",
+    "final_score": 18.0542,
+    "rank": 9
+  },
+  {
+    "rank_type": "triple",
+    "combination": "ramucirumab + sarilumab + durvalumab",
+    "n_agents": 3,
+    "targets": [
+      "VEGFA",
+      "IL6R",
+      "PDL1"
+    ],
+    "therapeutic_index_combined": 26.446,
+    "synergy_class": "Synergy",
+    "final_score": 17.5589,
+    "rank": 10
+  }
+]

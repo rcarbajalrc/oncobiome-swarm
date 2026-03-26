@@ -1,0 +1,67 @@
+[
+  {
+    "gene": "KRAS",
+    "depmap_mean_score": -1.5,
+    "depmap_essential": true,
+    "depmap_essential_lines": 5,
+    "onco_fragility_score": 0.85,
+    "onco_predicted_essential": true,
+    "directional_concordance": true,
+    "magnitude_correlation": 0.9,
+    "overall_concordance": 0.96,
+    "depmap_notes": "KRAS-mutant lines highly dependent",
+    "onco_mechanism": "Oncogene addiction \u2014 proliferation rate drops 65%"
+  },
+  {
+    "gene": "VEGFA",
+    "depmap_mean_score": -0.43,
+    "depmap_essential": false,
+    "depmap_essential_lines": 0,
+    "onco_fragility_score": 0.62,
+    "onco_predicted_essential": false,
+    "directional_concordance": true,
+    "magnitude_correlation": 0.595,
+    "overall_concordance": 0.838,
+    "depmap_notes": "Autocrine loop, not essential in vitro",
+    "onco_mechanism": "Angiogenic switch enables sanctuary niches"
+  },
+  {
+    "gene": "IL6",
+    "depmap_mean_score": -0.33,
+    "depmap_essential": false,
+    "depmap_essential_lines": 0,
+    "onco_fragility_score": 0.55,
+    "onco_predicted_essential": false,
+    "directional_concordance": true,
+    "magnitude_correlation": 0.615,
+    "overall_concordance": 0.846,
+    "depmap_notes": "Paracrine (stromal), not essential in vitro",
+    "onco_mechanism": "M2 macrophage polarization threshold driver"
+  },
+  {
+    "gene": "CD274",
+    "depmap_mean_score": -0.19,
+    "depmap_essential": false,
+    "depmap_essential_lines": 0,
+    "onco_fragility_score": 0.71,
+    "onco_predicted_essential": false,
+    "directional_concordance": true,
+    "magnitude_correlation": 0.385,
+    "overall_concordance": 0.754,
+    "depmap_notes": "Immune evasion; in vitro irrelevant (no T cells)",
+    "onco_mechanism": "NK/CD8+ exhaustion acceleration via PD-L1 signaling"
+  },
+  {
+    "gene": "IL6R",
+    "depmap_mean_score": -0.26,
+    "depmap_essential": false,
+    "depmap_essential_lines": 0,
+    "onco_fragility_score": 0.52,
+    "onco_predicted_essential": false,
+    "directional_concordance": true,
+    "magnitude_correlation": 0.61,
+    "overall_concordance": 0.844,
+    "depmap_notes": "Receptor; paracrine signaling context-dependent",
+    "onco_mechanism": "DC tolerization prevention \u2014 maturation cycles"
+  }
+]

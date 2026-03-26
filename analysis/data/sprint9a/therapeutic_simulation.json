@@ -1,0 +1,189 @@
+[
+  {
+    "blueprint_name": "UNTREATED (control)",
+    "targets": [],
+    "tumor_c6": 49,
+    "tumor_c12": 58,
+    "tumor_c25": 63,
+    "tumor_c35": 72,
+    "tumor_reduction_vs_untreated_pct": 0.0,
+    "nk_collapse_cycle": 25,
+    "cd8_collapse_cycle": 32,
+    "immune_intact_c35": false
+  },
+  {
+    "blueprint_name": "RMC-9805 + siltuximab + sarilumab",
+    "targets": [
+      "KRAS_G12D",
+      "IL6",
+      "IL6R"
+    ],
+    "final_params": {
+      "tumor_proliferation_rate": 0.1702,
+      "immune_kill_rate": 0.15,
+      "nk_kill_rate": 0.1,
+      "immune_exhaustion_age": 15,
+      "cytokine_decay_rate": 0.04,
+      "m2_polarization_threshold": 0.0779,
+      "dc_maturation_cycles": 1,
+      "vegf_angiogenic_rate": 0.25
+    },
+    "tumor_c6": 16.9,
+    "tumor_c12": 24.6,
+    "tumor_c25": 50.3,
+    "tumor_c35": 54.4,
+    "tumor_c35_untreated": 72,
+    "tumor_reduction_vs_untreated_pct": 24.4,
+    "nk_collapse_cycle": 20,
+    "cd8_collapse_cycle": 28,
+    "immune_intact_c35": false,
+    "tumor_trajectory_sample": {
+      "1": 12.6,
+      "6": 16.9,
+      "12": 24.6,
+      "20": 40.1,
+      "25": 50.3,
+      "35": 54.4
+    }
+  },
+  {
+    "blueprint_name": "RMC-9805 + ramucirumab + siltuximab",
+    "targets": [
+      "KRAS_G12D",
+      "VEGFA",
+      "IL6"
+    ],
+    "final_params": {
+      "tumor_proliferation_rate": 0.1702,
+      "immune_kill_rate": 0.15,
+      "nk_kill_rate": 0.1,
+      "immune_exhaustion_age": 15,
+      "cytokine_decay_rate": 0.0536,
+      "m2_polarization_threshold": 0.0779,
+      "dc_maturation_cycles": 3,
+      "vegf_angiogenic_rate": 0.25
+    },
+    "tumor_c6": 16.9,
+    "tumor_c12": 24.6,
+    "tumor_c25": 50.3,
+    "tumor_c35": 54.4,
+    "tumor_c35_untreated": 72,
+    "tumor_reduction_vs_untreated_pct": 24.4,
+    "nk_collapse_cycle": 20,
+    "cd8_collapse_cycle": 28,
+    "immune_intact_c35": false,
+    "tumor_trajectory_sample": {
+      "1": 12.6,
+      "6": 16.9,
+      "12": 24.6,
+      "20": 40.1,
+      "25": 50.3,
+      "35": 54.4
+    }
+  },
+  {
+    "blueprint_name": "RMC-9805 + siltuximab + durvalumab",
+    "targets": [
+      "KRAS_G12D",
+      "IL6",
+      "PDL1"
+    ],
+    "final_params": {
+      "tumor_proliferation_rate": 0.1702,
+      "immune_kill_rate": 0.15,
+      "nk_kill_rate": 0.1,
+      "immune_exhaustion_age": 21,
+      "cytokine_decay_rate": 0.04,
+      "m2_polarization_threshold": 0.0779,
+      "dc_maturation_cycles": 3,
+      "vegf_angiogenic_rate": 0.25
+    },
+    "tumor_c6": 16.9,
+    "tumor_c12": 24.6,
+    "tumor_c25": 47.1,
+    "tumor_c35": 53.8,
+    "tumor_c35_untreated": 72,
+    "tumor_reduction_vs_untreated_pct": 25.3,
+    "nk_collapse_cycle": 26,
+    "cd8_collapse_cycle": 34,
+    "immune_intact_c35": false,
+    "tumor_trajectory_sample": {
+      "1": 12.6,
+      "6": 16.9,
+      "12": 24.6,
+      "20": 39.3,
+      "25": 47.1,
+      "35": 53.8
+    }
+  },
+  {
+    "blueprint_name": "RMC-9805 + ramucirumab + sarilumab",
+    "targets": [
+      "KRAS_G12D",
+      "VEGFA",
+      "IL6R"
+    ],
+    "final_params": {
+      "tumor_proliferation_rate": 0.1702,
+      "immune_kill_rate": 0.15,
+      "nk_kill_rate": 0.1,
+      "immune_exhaustion_age": 15,
+      "cytokine_decay_rate": 0.0536,
+      "m2_polarization_threshold": 0.06,
+      "dc_maturation_cycles": 1,
+      "vegf_angiogenic_rate": 0.25
+    },
+    "tumor_c6": 16.9,
+    "tumor_c12": 24.6,
+    "tumor_c25": 50.3,
+    "tumor_c35": 54.4,
+    "tumor_c35_untreated": 72,
+    "tumor_reduction_vs_untreated_pct": 24.4,
+    "nk_collapse_cycle": 20,
+    "cd8_collapse_cycle": 28,
+    "immune_intact_c35": false,
+    "tumor_trajectory_sample": {
+      "1": 12.6,
+      "6": 16.9,
+      "12": 24.6,
+      "20": 40.1,
+      "25": 50.3,
+      "35": 54.4
+    }
+  },
+  {
+    "blueprint_name": "RMC-9805 + sarilumab + durvalumab",
+    "targets": [
+      "KRAS_G12D",
+      "IL6R",
+      "PDL1"
+    ],
+    "final_params": {
+      "tumor_proliferation_rate": 0.1702,
+      "immune_kill_rate": 0.15,
+      "nk_kill_rate": 0.1,
+      "immune_exhaustion_age": 21,
+      "cytokine_decay_rate": 0.04,
+      "m2_polarization_threshold": 0.06,
+      "dc_maturation_cycles": 1,
+      "vegf_angiogenic_rate": 0.25
+    },
+    "tumor_c6": 16.9,
+    "tumor_c12": 24.6,
+    "tumor_c25": 47.1,
+    "tumor_c35": 53.8,
+    "tumor_c35_untreated": 72,
+    "tumor_reduction_vs_untreated_pct": 25.3,
+    "nk_collapse_cycle": 26,
+    "cd8_collapse_cycle": 34,
+    "immune_intact_c35": false,
+    "tumor_trajectory_sample": {
+      "1": 12.6,
+      "6": 16.9,
+      "12": 24.6,
+      "20": 39.3,
+      "25": 47.1,
+      "35": 53.8
+    }
+  }
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "name": "sprint9a_triple_rank1",
+    "description": "Sprint 9A: RMC-9805 + siltuximab + sarilumab",
+    "base_experiment": "bridge_n10_llm",
+    "n_runs": 3,
+    "modifications": [
+      {
+        "target": "KRAS_G12D",
+        "params": {
+          "tumor_proliferation_multiplier": 0.45
+        }
+      },
+      {
+        "target": "IL6",
+        "params": {
+          "m2_threshold_multiplier": 1.3
+        }
+      },
+      {
+        "target": "IL6R",
+        "params": {
+          "dc_maturation_multiplier": 0.57
+        }
+      }
+    ]
+  },
+  {
+    "name": "sprint9a_triple_rank2",
+    "description": "Sprint 9A: RMC-9805 + ramucirumab + siltuximab",
+    "base_experiment": "bridge_n10_llm",
+    "n_runs": 3,
+    "modifications": [
+      {
+        "target": "KRAS_G12D",
+        "params": {
+          "tumor_proliferation_multiplier": 0.45
+        }
+      },
+      {
+        "target": "VEGFA",
+        "params": {
+          "cytokine_decay_multiplier": 1.34
+        }
+      },
+      {
+        "target": "IL6",
+        "params": {
+          "m2_threshold_multiplier": 1.3
+        }
+      }
+    ]
+  },
+  {
+    "name": "sprint9a_triple_rank3",
+    "description": "Sprint 9A: RMC-9805 + siltuximab + durvalumab",
+    "base_experiment": "bridge_n10_llm",
+    "n_runs": 3,
+    "modifications": [
+      {
+        "target": "KRAS_G12D",
+        "params": {
+          "tumor_proliferation_multiplier": 0.45
+        }
+      },
+      {
+        "target": "IL6",
+        "params": {
+          "m2_threshold_multiplier": 1.3
+        }
+      },
+      {
+        "target": "PDL1",
+        "params": {
+          "exhaustion_age_addend": 7
+        }
+      }
+    ]
+  },
+  {
+    "name": "sprint9a_triple_rank4",
+    "description": "Sprint 9A: RMC-9805 + ramucirumab + sarilumab",
+    "base_experiment": "bridge_n10_llm",
+    "n_runs": 3,
+    "modifications": [
+      {
+        "target": "KRAS_G12D",
+        "params": {
+          "tumor_proliferation_multiplier": 0.45
+        }
+      },
+      {
+        "target": "VEGFA",
+        "params": {
+          "cytokine_decay_multiplier": 1.34
+        }
+      },
+      {
+        "target": "IL6R",
+        "params": {
+          "dc_maturation_multiplier": 0.57
+        }
+      }
+    ]
+  },
+  {
+    "name": "sprint9a_triple_rank5",
+    "description": "Sprint 9A: RMC-9805 + sarilumab + durvalumab",
+    "base_experiment": "bridge_n10_llm",
+    "n_runs": 3,
+    "modifications": [
+      {
+        "target": "KRAS_G12D",
+        "params": {
+          "tumor_proliferation_multiplier": 0.45
+        }
+      },
+      {
+        "target": "IL6R",
+        "params": {
+          "dc_maturation_multiplier": 0.57
+        }
+      },
+      {
+        "target": "PDL1",
+        "params": {
+          "exhaustion_age_addend": 7
+        }
+      }
+    ]
+  }
+]

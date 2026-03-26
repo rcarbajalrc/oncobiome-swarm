@@ -1,0 +1,29 @@
+OncoBiome Sprint 8B — Virtual Docking & Combination Design
+=================================================================
+
+DOCKING SCORES (ΔG kcal/mol, T=310K):
+  ramucirumab          ΔG= -14.610  Kd=0.050nM  TI=8.474
+  durvalumab           ΔG= -14.421  Kd=0.068nM  TI=8.364
+  siltuximab           ΔG= -14.183  Kd=0.100nM  TI=10.354
+  sarilumab            ΔG= -13.726  Kd=0.210nM  TI=9.608
+  atezolizumab         ΔG= -13.329  Kd=0.400nM  TI=6.931
+  bevacizumab          ΔG= -12.765  Kd=1.000nM  TI=7.787
+  MRTX1133             ΔG= -12.631  Kd=0.700nM  TI=10.737
+  RMC-9805             ΔG= -12.475  Kd=1.200nM  TI=11.477
+  tocilizumab          ΔG= -12.279  Kd=2.200nM  TI=8.350
+
+TOP SINERGIAS DUALES (Loewe CI, ajustado):
+  RMC-9805 + durvalumab                              CI=0.650 (Synergy)
+  siltuximab + durvalumab                            CI=0.700 (Synergy)
+  sarilumab + durvalumab                             CI=0.700 (Synergy)
+  ramucirumab + durvalumab                           CI=0.750 (Synergy)
+  RMC-9805 + ramucirumab                             CI=0.800 (Synergy)
+
+TOP 5 BLUEPRINTS PARA SPRINT 9A:
+  #1 RMC-9805 + siltuximab + sarilumab score=20.8740
+  #2 RMC-9805 + ramucirumab + siltuximab score=20.1211
+  #3 RMC-9805 + siltuximab + durvalumab score=20.0481
+  #4 RMC-9805 + ramucirumab + sarilumab score=19.6258
+  #5 RMC-9805 + sarilumab + durvalumab score=19.5527
+
+Coste: $0 | Tiempo: <1 min
