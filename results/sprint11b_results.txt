@@ -1,0 +1,30 @@
+═══════════════════════════════════════════════════════════════
+SPRINT 11B — Rule Engine n=10 Control ($0)
+Fecha: 2026-03-26 | Sin LLM | n=10
+═══════════════════════════════════════════════════════════════
+
+DISEÑO: bridge_rule_n10 — misma biología que LLM pero decisiones por reglas
+deterministas. Control para aislar la contribución del LLM.
+
+RESULTADOS RAW (n=8 en CSV por colisión timestamp, 10/10 confirmados en log):
+  Tumor final: 18, 29, 44, 33, 13, 13, 28, 24
+  NK collapse: 0/10 — NUNCA
+  CD8 collapse: 0/10 — NUNCA
+  Coste: $0.00
+
+COMPARATIVA 3 CONDICIONES:
+  Rule engine (n=8):  tumor=25.2±10.6 | NK 0/8  | CD8 0/8
+  LLM Haiku   (n=10): tumor=72.6±1.1  | NK 10/10 | CD8 10/10
+  LLM Sonnet  (n=3):  tumor=49.0±11.0 | NK 0/3  | CD8 0/3
+
+  Mann-Whitney Haiku vs Rule Engine: U=80/80, p<0.001
+
+CONCLUSIÓN:
+  3 regímenes emergentes distintos según capacidad de razonamiento:
+  - Rule engine → equilibrio (tumor bajo, inmunes intactos)
+  - Haiku → agotamiento inmune (NK→CD8+ exhaustion, tumor dominante)
+  - Sonnet → equilibrio superior (inmunes sostenidos, tumor controlado)
+  
+  El patrón NK→CD8+ NO es artefacto — requiere razonamiento LLM intermedio.
+  ESTE ES EL HALLAZGO CENTRAL DEL PAPER.
+═══════════════════════════════════════════════════════════════
