@@ -109,6 +109,11 @@ class LLMClient:
     _instance: "LLMClient | None" = None
 
     def __new__(cls) -> "LLMClient":
+        # Sprint 7A: resetear singleton si AGENT_MODEL cambió (multi-LLM support)
+        current_agent_model = os.environ.get("AGENT_MODEL", "")
+        if cls._instance is not None and hasattr(cls._instance, "_agent_model"):
+            if cls._instance._agent_model != current_agent_model and current_agent_model:
+                cls._instance = None  # forzar reinicialización
         if cls._instance is None:
             cls._instance = super().__new__(cls)
             cls._instance._initialized = False
@@ -166,7 +171,7 @@ class LLMClient:
     def provider_info(self) -> str:
         if self._use_ollama:
             return f"ollama/{self._ollama._model}"
-        return f"anthropic/{self._haiku_model}"
+        return f"anthropic/{self._agent_model}"
 
     # ── API pública ────────────────────────────────────────────────────────
 
