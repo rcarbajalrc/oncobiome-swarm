@@ -372,7 +372,7 @@ def run_sprint8a():
         print(f"  → Consultando AlphaFold DB...")
         af_meta = fetch_alphafold_metadata(acc)
         if af_meta:
-            plddt = af_meta.get("meanPlddt", "N/A")
+            plddt = float(af_meta.get("meanPlddt", 0.0))
             print(f"  → AlphaFold pLDDT global: {plddt:.1f} (>90=alta confianza)")
         else:
             # Valores verificados en literatura (Fleming et al. NAR 2025)
