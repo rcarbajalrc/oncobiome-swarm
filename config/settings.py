@@ -35,6 +35,7 @@ class SimulationConfig(BaseSettings):
 
     # Models
     haiku_model: str = "claude-haiku-4-5-20251001"
+    sonnet_model: str = "claude-sonnet-4-5-20251101"  # Sprint 7A: multi-LLM
     opus_model:  str = "claude-opus-4-5-20251101"
 
     # Grid

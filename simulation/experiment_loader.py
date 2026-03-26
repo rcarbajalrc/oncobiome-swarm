@@ -106,6 +106,8 @@ def apply_experiment_to_env(params: dict) -> None:
         "dc_maturation_cycles":          "DC_MATURATION_CYCLES",
         # Sprint 7B: seed reproducibilidad
         "simulation_seed":                "SIMULATION_SEED",
+        # Sprint 7A: multi-LLM
+        "agent_model":                    "AGENT_MODEL",
     }
 
     for param_key, env_key in mapping.items():

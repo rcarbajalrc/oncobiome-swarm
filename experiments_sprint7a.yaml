@@ -1,0 +1,65 @@
+
+  # ── Sprint 7A: Multi-LLM ablation ─────────────────────────────────────────
+  #
+  # Objetivo: determinar si el patrón NK→CD8⁺ depende del modelo LLM específico
+  # o emerge de la topología causal independientemente del motor de lenguaje.
+  #
+  # Hipótesis H_multi:
+  #   Si el patrón persiste con Haiku, Sonnet y base → dinámica estructural
+  #   Si el patrón colapsa con base → conocimiento biomédico previo en pesos
+  #
+  # Diseño:
+  #   3 condiciones × 3 runs = 9 runs LLM
+  #   Misma topología, mismos parámetros biológicos, solo cambia AGENT_MODEL
+  #
+  # Coste estimado:
+  #   Haiku:  ~$0.70/run × 3 = ~$2.10
+  #   Sonnet: ~$8.00/run × 3 = ~$24.00  (Sonnet ~11x más caro que Haiku)
+  #   Total:  ~$26.10 (Haiku ya ejecutado como bridge_n10_llm)
+  #
+  # Nota: Haiku baseline = bridge_n10_llm (ya disponible, n=10)
+  # Solo necesitamos ejecutar Sonnet (n=3 para comparación directa)
+
+  sprint7a_sonnet_llm:
+    max_agents: 80
+    total_cycles: 35
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 25
+    llm_provider: anthropic
+    agent_model: "claude-sonnet-4-5-20251101"
+    simulation_seed: 42
+    description: "Sprint 7A — Sonnet agentes (bridge config, 35c, seed=42, ~$8/run)"
+
+  sprint7a_haiku_llm:
+    max_agents: 80
+    total_cycles: 35
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 25
+    llm_provider: anthropic
+    agent_model: "claude-haiku-4-5-20251001"
+    simulation_seed: 42
+    description: "Sprint 7A — Haiku agentes baseline (bridge config, 35c, seed=42, ~$0.45/run)"
+
+  sprint7a_haiku_noseed:
+    max_agents: 80
+    total_cycles: 35
+    n_tumor_cells: 12
+    n_immune_cells: 8
+    n_macrophages: 3
+    n_phytochemicals: 2
+    n_nk_cells: 4
+    n_dendritic_cells: 3
+    opus_analysis_interval: 25
+    llm_provider: anthropic
+    agent_model: "claude-haiku-4-5-20251001"
+    description: "Sprint 7A — Haiku sin seed (control estocástico, ~$0.45/run)"

@@ -143,6 +143,8 @@ class LLMClient:
         self._max_retries = cfg.llm_max_retries
         self._haiku_model = cfg.haiku_model
         self._opus_model = cfg.opus_model
+        # Sprint 7A: modelo de agente configurable (haiku o sonnet según experimento)
+        self._agent_model = os.environ.get("AGENT_MODEL", cfg.haiku_model)
         self._haiku_max_tokens = min(cfg.haiku_max_tokens, 50)
         self._opus_max_tokens = cfg.opus_max_tokens
         self._cycle_tokens: dict = {
@@ -172,7 +174,7 @@ class LLMClient:
         if self._use_ollama:
             return await self._call_ollama(system=system, user=user, max_tokens=mt)
         return await self._call_anthropic_cached(
-            model=self._haiku_model, system=system, user=user, max_tokens=mt
+            model=self._agent_model, system=system, user=user, max_tokens=mt
         )
 
     async def call_haiku_batch(
@@ -198,7 +200,7 @@ class LLMClient:
             raw = await self._call_ollama(system=system, user=batch_user, max_tokens=batch_max_tokens)
         else:
             raw = await self._call_anthropic_cached(
-                model=self._haiku_model,
+                model=self._agent_model,
                 system=system,
                 user=batch_user,
                 max_tokens=batch_max_tokens,
