@@ -224,15 +224,23 @@ Reproducible by any researcher with an Anthropic API key.
 
 ```bibtex
 @misc{carbajal2026oncobiome,
-  title={OncoBiome Swarm: A Large Language Model-Based Multi-Agent Framework
-         for Emergent Simulation of the KRAS G12D Pancreatic Tumor Microenvironment},
+  title={OncoBiome Swarm: An LLM-Agent-Based Model of the Pancreatic Tumor
+         Microenvironment Reveals Emergent Immune Exhaustion Modulated by
+         LLM Reasoning Capacity},
   author={Carbajal, Roberto},
   year={2026},
   doi={10.5281/zenodo.19226380},
   url={https://doi.org/10.5281/zenodo.19226380},
-  note={Independent researcher, Barcelona, Spain}
+  note={Independent Researcher, Barcelona, Spain. Preprint v2.5, March 2026}
 }
 ```
+
+### Version history
+
+| Version | DOI | Date | Notes |
+|---------|-----|------|-------|
+| v2.5 (current) | [10.5281/zenodo.19254913](https://doi.org/10.5281/zenodo.19254913) | March 27, 2026 | 23 emergent phenomena, TCGA-PAAD n=177 external consistency, ablation-validated |
+| v2.0 | [10.5281/zenodo.19226380](https://doi.org/10.5281/zenodo.19226380) | March 26, 2026 | Initial public release |
 
 ---
 
