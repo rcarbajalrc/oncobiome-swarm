@@ -1,0 +1,54 @@
+{
+  "n_patients": 177,
+  "correlations": {
+    "NK (NCAM1) vs CD8+ (CD8A)": {
+      "r": -0.06654995312755205,
+      "p": 0.37759882696123426
+    },
+    "NK (NCAM1) vs CD8 exhaustion (TIM-3/HAVCR2)": {
+      "r": -0.18510835355694144,
+      "p": 0.012709163254061018
+    },
+    "NK (NCAM1) vs CD8 exhaustion (PD-1/PDCD1)": {
+      "r": -0.10566179297555918,
+      "p": 0.1598302350968117
+    },
+    "NK (NCAM1) vs IFNG": {
+      "r": -0.06534257081350443,
+      "p": 0.3863518523236946
+    },
+    "CD8A vs IFNG": {
+      "r": 0.3597056416329326,
+      "p": 3.3999480786306435e-07
+    },
+    "IL6 vs IFNG (inverse, model prediction)": {
+      "r": 0.06006508627464687,
+      "p": 0.4260182868840887
+    },
+    "IL6 vs CD8A (model: IL6 suppresses immunity)": {
+      "r": 0.42525637973283986,
+      "p": 5.111386869316448e-10
+    },
+    "VEGFA vs IFNG (model: VEGF:IFNg ratio)": {
+      "r": -0.07904718132857086,
+      "p": 0.2941881051956541
+    },
+    "VEGFA vs NK (NCAM1)": {
+      "r": 0.10573233991096347,
+      "p": 0.1595484487663552
+    }
+  },
+  "nk_low_vs_high": {
+    "nk_low_cd8_mean": -0.370105,
+    "nk_high_cd8_mean": 0.186335593220339,
+    "nk_low_tim3_mean": -0.4351116666666667,
+    "nk_high_tim3_mean": -0.06859322033898305
+  },
+  "co_depletion": {
+    "both_low": 20,
+    "both_high": 19,
+    "expected_random": 11.0625,
+    "ratio_obs_vs_expected": 1.807909604519774
+  },
+  "vegf_dominance_pct": 51.9774011299435
+}
